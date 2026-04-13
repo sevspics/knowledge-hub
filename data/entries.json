@@ -2253,5 +2253,175 @@
       "let-data-decide",
       "identity"
     ]
+  },
+  {
+    "id": "joel-04",
+    "title": "Mine Lead Conversations for Content Ideas",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "joel-re",
+    "type": "tactic",
+    "description": "When leads say 'just curious,' don't accept that and move on. Ask: What are you curious about? How far away are you from selling? Have you sold before? Do you have other properties? How ready are you? Put every answer in a spreadsheet with their timeline. That data does two things: it feeds your CRM so you follow up at the right time, and it gives you the exact questions real people are asking, which become your next batch of video content.",
+    "context": "Joel was calling back leads from static Facebook ads and accepting 'just curious' as a dead end. Sev reframed those conversations as a goldmine for both nurturing and content creation.",
+    "businessTypes": [
+      "Real Estate",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "lead-nurturing",
+      "data-collection",
+      "they-ask-you-answer",
+      "content-from-sales",
+      "crm"
+    ]
+  },
+  {
+    "id": "joel-05",
+    "title": "Build Value Beyond Your Core Service",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "joel-re",
+    "type": "tactic",
+    "description": "Don't just do the thing you're hired for. Be the connector. A real estate agent who helps with the mortgage broker, solicitor, movers, and decluttering becomes irreplaceable. A wedding photographer who recommends the celebrant, DJ, florist, and cake maker gets hired first because clients see value beyond the photos. Figure out what happens AFTER your service and help them with that too. Tell people you do this in your content.",
+    "context": "Joel only saw his role as selling houses. Sev used his own wedding photography business as the parallel: clients hire him first, then he connects them with all their other vendors.",
+    "businessTypes": [
+      "Real Estate",
+      "Wedding",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "value-stacking",
+      "connector",
+      "client-experience",
+      "differentiation",
+      "referral-network"
+    ]
+  },
+  {
+    "id": "joel-06",
+    "title": "Sell the Home, Not the House (Outcome Framing)",
+    "category": "brand",
+    "funnel": [
+      "MOF",
+      "BOF"
+    ],
+    "sourceId": "joel-re",
+    "type": "case-study",
+    "description": "A residential builder in Perth was posting about building properties. Generic, same as everyone. Three months of testing, then the hit: they stopped selling the house and started selling the home. What happens after you move in? Decorating, making it yours, the emotional end-state. They became the most-followed residential builder in Australia on social media in 12 months. You're not selling the thing. You're selling the outcome of the thing.",
+    "context": "Sev's client from five years ago, a large Perth residential builder with an internal marketing team. Took 3 months of testing content before finding the winning angle.",
+    "businessTypes": [
+      "Construction",
+      "Real Estate",
+      "All"
+    ],
+    "tags": [
+      "outcome-framing",
+      "emotional-hook",
+      "testing",
+      "reframe",
+      "case-study"
+    ]
+  },
+  {
+    "id": "joel-07",
+    "title": "Use Real Names, Real Suburbs, Real Numbers",
+    "category": "brand",
+    "funnel": [
+      "MOF",
+      "BOF"
+    ],
+    "sourceId": "joel-re",
+    "type": "tactic",
+    "description": "Almost all real estate agents give generic advice. They all sound the same. 'We have a house in Willoughby. We're selling it.' Cool, tell me nothing. Instead: 'The last three houses I sold in Willoughby got above market price because we did X, Y, and Z.' Use real client names (with permission), real suburbs, real sale prices, real timelines. Specificity builds trust because it proves you've actually done the work.",
+    "context": "Joel's content was news-anchor style with suburb data but no personal stories. Sev pushed him to use Jolene in Carlisle as his first customer journey video, with real details from the actual sale.",
+    "businessTypes": [
+      "Real Estate",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "specificity",
+      "social-proof",
+      "trust-building",
+      "customer-journey",
+      "storytelling"
+    ]
+  },
+  {
+    "id": "joel-08",
+    "title": "Leverage Your Past Career as Your USP",
+    "category": "brand",
+    "funnel": [
+      "TOF",
+      "MOF"
+    ],
+    "sourceId": "joel-re",
+    "type": "tactic",
+    "description": "Most agents fell into real estate by default. It's the 30s and 40s version of a personal trainer in your early 20s. If you came from a different career, lean into it hard. Joel was a project planner. That's transferable. That's a hook: 'Why I left project planning to do this full time.' Be transparent about why you chose this. Having a deliberate reason and transferable skills makes you instantly different from every other agent.",
+    "context": "Joel came from project planning/engineering before real estate. Sev told him to use that background the same way Sev leverages his height in wedding photography ('no double chins from these angles').",
+    "businessTypes": [
+      "Real Estate",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "personal-brand",
+      "origin-story",
+      "differentiation",
+      "unique-selling-personality",
+      "career-pivot"
+    ]
+  },
+  {
+    "id": "joel-09",
+    "title": "AI Can't Rank What You Don't Publish",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "joel-re",
+    "type": "mindset",
+    "description": "People are searching on AI more and more to compare service providers, commissions, pricing, and processes. AI does not rank you if your data isn't publicly discoverable. If you don't have your costs, your process, and your results transparently published anywhere, AI won't recommend you. It's not optional anymore. The businesses that publish their information openly will get the AI referrals. The ones that hide behind 'call for a quote' will get skipped.",
+    "context": "Sev explained this to Joel specifically around the Cost & Pricing ideation engine. People use AI to compare real estate agent commissions and fees. If Joel's pricing isn't indexed, AI literally can't find him.",
+    "businessTypes": [
+      "Real Estate",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "ai-search",
+      "geo-thesis",
+      "pricing-transparency",
+      "searchability",
+      "discoverability"
+    ]
+  },
+  {
+    "id": "joel-10",
+    "title": "Only 13% Keep Going After the Workshop",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "joel-re",
+    "type": "case-study",
+    "description": "Post-workshop, about 13% of people actually continue the momentum. The bottleneck isn't knowledge, it's habit building. People learn the strategy, film 20 videos in the workshop, then stop posting. The fix is accountability systems: pipeline tracking (where's the bottleneck between ideation, scripting, filming, editing, publishing?), weekly check-ins, and reducing friction so there's no excuse not to post. The knowledge is easy. The consistency is the hard part.",
+    "context": "Sev shared this stat with Joel while demoing the new content pipeline tool he built in Claude. The tool tracks exactly where each student's bottleneck is so Sev can coach them through it.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "accountability",
+      "consistency",
+      "habit-building",
+      "bottleneck",
+      "post-workshop"
+    ]
   }
 ]
