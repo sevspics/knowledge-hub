@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sev's Knowledge Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --surface:#ffffff;--bg:#F8FAFC;--text-primary:#0F172A;--text-secondary:#475569;
+  --text-muted:#94A3B8;--border:#E2E8F0;--tag-bg:#F1F5F9;--teal:#0D9488;
+  --amber:#F59E0B;--violet:#8B5CF6;--blue:#3B82F6;--pink:#EC4899;--red:#EF4444;
+  --emerald:#10B981;--indigo:#6366F1;--orange:#F97316;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text-primary);-webkit-font-smoothing:antialiased}
+.header{background:#0F172A;padding:32px 24px 24px;color:#fff}
+.header-inner{max-width:960px;margin:0 auto}
+.header-title-row{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.header-title-row span{font-size:28px}
+.header h1{font-size:28px;font-weight:700;font-family:'DM Serif Display',serif}
+.header p{font-size:14px;color:#94A3B8;margin:4px 0 20px;max-width:600px}
+.stats-row{display:flex;gap:16px;flex-wrap:wrap}
+.stat-card{background:rgba(255,255,255,0.06);border-radius:10px;padding:12px 20px;min-width:120px}
+.stat-num{font-size:24px;font-weight:700;font-family:'DM Mono',monospace;color:#fff}
+.stat-num.teal{color:var(--teal)}.stat-num.amber{color:var(--amber)}
+.stat-label{font-size:11px;color:#94A3B8;letter-spacing:0.5px}
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.nav-inner{max-width:960px;margin:0 auto;display:flex;padding:0 24px}
+.nav-btn{padding:14px 20px;border:none;background:none;cursor:pointer;font-size:14px;font-weight:500;color:var(--text-muted);border-bottom:3px solid transparent;transition:all .15s;font-family:'DM Sans',sans-serif}
+.nav-btn:hover{color:var(--text-secondary)}.nav-btn.active{font-weight:700;color:var(--text-primary);border-bottom-color:var(--teal)}
+.main{max-width:960px;margin:0 auto;padding:24px}
+.search-input{width:100%;padding:14px 20px;border-radius:10px;border:1px solid var(--border);font-size:15px;background:#fff;outline:none;margin-bottom:16px;font-family:'DM Sans',sans-serif}
+.search-input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,0.1)}
+.chip-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}.chip-row.sm{margin-bottom:20px}
+.chip{padding:6px 14px;border-radius:100px;border:1px solid var(--border);background:#fff;color:var(--text-secondary);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif;white-space:nowrap}
+.chip:hover{border-color:var(--text-muted)}.chip.active{background:#0F172A;color:#fff;border-color:#0F172A}.chip.sm{padding:4px 12px;font-size:11px}
+.result-count{font-size:13px;color:var(--text-muted);margin-bottom:12px}
+.badge{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.5px;white-space:nowrap}
+.badge.sm{padding:2px 8px;font-size:10px}
+.entry-card{background:var(--surface);border-radius:12px;padding:20px 24px;margin-bottom:12px;cursor:pointer;border-left:4px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:all .2s ease}
+.entry-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.08)}.entry-card.expanded{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.entry-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.entry-content{flex:1}.entry-badges{display:flex;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.entry-title{font-size:18px;font-weight:700;margin:0 0 6px;line-height:1.3}
+.entry-desc{font-size:14px;color:var(--text-secondary);margin:0;line-height:1.5}
+.entry-desc.clamped{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.entry-arrow{font-size:18px;color:var(--text-muted);flex-shrink:0;transition:transform .2s}
+.entry-card.expanded .entry-arrow{transform:rotate(180deg)}
+.entry-detail{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);display:none}
+.entry-card.expanded .entry-detail{display:block}
+.detail-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:4px}
+.detail-text{font-size:13px;color:var(--text-secondary);margin:0;line-height:1.5}.detail-text.italic{font-style:italic}
+.detail-row{display:flex;gap:24px;flex-wrap:wrap;margin:12px 0}
+.detail-col .detail-text{color:var(--text-primary)}
+.tag-row{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:10px;padding:2px 8px;border-radius:4px;background:var(--tag-bg);color:var(--text-muted);font-family:'DM Mono',monospace}
+.call-card{background:var(--surface);border-radius:12px;padding:16px 20px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-left:4px solid #CBD5E1}
+.call-card.has-entries{border-left-color:var(--teal)}
+.call-info{flex:1}.call-name-row{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.call-name{font-size:15px;font-weight:700}.call-meta{font-size:12px;color:var(--text-muted)}
+.call-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.call-count{font-size:12px;font-weight:700;color:var(--teal);background:rgba(13,148,136,.08);padding:2px 10px;border-radius:100px}
+.call-pending{font-size:11px;color:var(--amber);font-weight:600;background:rgba(245,158,11,.08);padding:2px 10px;border-radius:100px}
+.call-link{font-size:12px;color:var(--blue);text-decoration:none;font-weight:600}.call-link:hover{text-decoration:underline}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.topic-card{background:#fff;border-radius:14px;padding:24px;cursor:pointer;border-top:4px solid var(--teal);box-shadow:0 1px 4px rgba(0,0,0,.06);transition:transform .15s,box-shadow .15s}
+.topic-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.topic-icon{font-size:32px;margin-bottom:8px}.topic-name{font-size:18px;font-weight:700;margin:0 0 4px}
+.topic-count{font-size:28px;font-weight:700;font-family:'DM Mono',monospace;margin-bottom:8px}
+.topic-types{display:flex;gap:6px;flex-wrap:wrap}
+.topic-type{font-size:10px;padding:2px 8px;border-radius:4px;background:var(--tag-bg);color:var(--text-muted)}
+.footer{text-align:center;padding:32px 24px;font-size:12px;color:var(--text-muted);border-top:1px solid var(--border);margin-top:48px}
+.footer p{margin:0}.footer .sub{margin-top:4px;font-size:11px}
+.empty{text-align:center;padding:48px 24px;color:var(--text-muted)}.empty-icon{font-size:32px;margin-bottom:8px}
+.hidden{display:none !important}
+@media(max-width:640px){.header h1{font-size:22px}.stats-row{gap:8px}.stat-card{min-width:100px;padding:10px 14px}.stat-num{font-size:20px}.entry-card{padding:16px}.entry-title{font-size:16px}.call-card{flex-direction:column;align-items:flex-start}.call-right{width:100%;justify-content:flex-start}}
+</style>
+</head>
+<body>
+<div class="header"><div class="header-inner">
+<div class="header-title-row"><span>🧠</span><h1>Sev's Knowledge Hub</h1></div>
+<p>Every framework, tactic, case study, and rant from advisory calls, sales conversations, audits, and podcasts. Searchable. Filterable. Growing.</p>
+<div class="stats-row">
+<div class="stat-card"><div class="stat-num teal" id="stat-entries">0</div><div class="stat-label">Knowledge Entries</div></div>
+<div class="stat-card"><div class="stat-num" id="stat-calls">0</div><div class="stat-label">Calls Indexed</div></div>
+<div class="stat-card"><div class="stat-num" id="stat-extracted">0</div><div class="stat-label">Fully Extracted</div></div>
+<div class="stat-card"><div class="stat-num amber" id="stat-pending">0</div><div class="stat-label">Awaiting Extraction</div></div>
+</div></div></div>
+<div class="nav"><div class="nav-inner">
+<button class="nav-btn active" data-view="knowledge" onclick="switchView('knowledge')">📚 Knowledge Base</button>
+<button class="nav-btn" data-view="calls" onclick="switchView('calls')">📞 Call Archive</button>
+<button class="nav-btn" data-view="topics" onclick="switchView('topics')">🗺️ Topic Explorer</button>
+</div></div>
+<div class="main">
+<div id="view-knowledge">
+<input class="search-input" id="search" placeholder="Search frameworks, tactics, case studies, tags..." oninput="renderEntries()">
+<div class="chip-row" id="cat-chips"></div>
+<div class="chip-row sm" id="funnel-chips"></div>
+<div class="result-count" id="result-count"></div>
+<div id="entries-container"></div>
+</div>
+<div id="view-calls" class="hidden">
+<div class="chip-row sm" id="call-type-chips"></div>
+<div id="calls-container"></div>
+</div>
+<div id="view-topics" class="hidden">
+<div class="topic-grid" id="topics-container"></div>
+</div>
+</div>
+<div class="footer">
+<p id="footer-text"></p>
+<p class="sub">Feed me more transcripts to grow the library. Every call you do is content for this hub.</p>
+</div>
+<script>
+const CATEGORIES={strategy:{label:"Content Strategy",color:"#0D9488",icon:"📐"},hooks:{label:"Hooks & Scripting",color:"#F59E0B",icon:"🎣"},formats:{label:"Content Formats",color:"#8B5CF6",icon:"🎬"},workflow:{label:"Workflow & Production",color:"#3B82F6",icon:"⚙️"},platform:{label:"Platform & Algorithm",color:"#EC4899",icon:"📱"},brand:{label:"Personal Brand",color:"#EF4444",icon:"🔥"},sales:{label:"Sales Through Content",color:"#10B981",icon:"💰"},ai:{label:"AI & Tools",color:"#6366F1",icon:"🤖"},mindset:{label:"Mindset & Consistency",color:"#F97316",icon:"🧠"}};
+const CALLS=[
+  {
+    "id": "group-apr13",
+    "name": "Group Advisory #1",
+    "date": "2026-04-13",
+    "type": "Group Advisory",
+    "attendees": [
+      "James MacLennan",
+      "Travis Ahern",
+      "Vin Coetzee",
+      "Wendy",
+      "Sherien Wissa",
+      "Kevin",
+      "Jordan LEntini"
+    ],
+    "link": null,
+    "duration": 82
+  },
+  {
+    "id": "daecian-s8",
+    "name": "Daecian x Sev \u2014 Session 8",
+    "date": "2026-04-09",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/630776560",
+    "duration": 37
+  },
+  {
+    "id": "daecian-s7",
+    "name": "Daecian x Sev \u2014 Session 7",
+    "date": "2026-04-03",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/share/ziPzsyQWQzeT_sPLfwXS8SUXLr_RbCWM",
+    "duration": 81
+  },
+  {
+    "id": "rezz-audit",
+    "name": "Rezz Shobeyri \u2014 Freedom Equation Audit",
+    "date": "2026-04-06",
+    "type": "Audit",
+    "attendees": [
+      "Rezz Shobeyri"
+    ],
+    "link": "https://fathom.video/calls/625980626",
+    "duration": 96
+  },
+  {
+    "id": "daecian-s6",
+    "name": "Daecian x Sev \u2014 Session 6",
+    "date": "2026-03-30",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/618355871",
+    "duration": 82
+  },
+  {
+    "id": "daecian-s5",
+    "name": "Daecian x Sev \u2014 Session 5",
+    "date": "2026-03-20",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/607919419",
+    "duration": 59
+  },
+  {
+    "id": "daecian-s4",
+    "name": "Daecian x Sev \u2014 Session 4",
+    "date": "2026-03-09",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/589627661",
+    "duration": 84
+  },
+  {
+    "id": "daecian-s3",
+    "name": "Daecian x Sev \u2014 Session 3",
+    "date": "2026-02-27",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/581542353",
+    "duration": 51
+  },
+  {
+    "id": "daecian-s2",
+    "name": "Daecian x Sev \u2014 Session 2",
+    "date": "2026-02-20",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/573216260",
+    "duration": null
+  },
+  {
+    "id": "daecian-s1",
+    "name": "Daecian x Sev \u2014 Session 1",
+    "date": "2026-02-15",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/568409930",
+    "duration": null
+  },
+  {
+    "id": "bts-luna",
+    "name": "BTS Sales \u2014 Luna Legal",
+    "date": "2026-04-01",
+    "type": "BTS Sales",
+    "attendees": [
+      "Luna Legal"
+    ],
+    "link": "https://fathom.video/calls/621875087",
+    "duration": 46
+  },
+  {
+    "id": "bts-melissa",
+    "name": "BTS Sales \u2014 Melissa Ree Sleep Clinic",
+    "date": "2026-04-01",
+    "type": "BTS Sales",
+    "attendees": [
+      "Melissa Ree"
+    ],
+    "link": "https://fathom.video/calls/621777836",
+    "duration": 52
+  },
+  {
+    "id": "bts-nick",
+    "name": "BTS Sales \u2014 Nick / Grounded Product",
+    "date": "2026-03-25",
+    "type": "BTS Sales",
+    "attendees": [
+      "Nick"
+    ],
+    "link": "https://fathom.video/calls/613755456",
+    "duration": 45
+  },
+  {
+    "id": "bts-aleesha",
+    "name": "BTS Sales \u2014 Aleesha Stinson",
+    "date": "2026-03-25",
+    "type": "BTS Sales",
+    "attendees": [
+      "Aleesha Stinson"
+    ],
+    "link": "https://fathom.video/calls/613425474",
+    "duration": 54
+  },
+  {
+    "id": "bts-crystal",
+    "name": "BTS Sales \u2014 Crystal / Rustic Charm Interiors",
+    "date": "2026-03-18",
+    "type": "BTS Sales",
+    "attendees": [
+      "Crystal"
+    ],
+    "link": "https://fathom.video/calls/605162578",
+    "duration": 37
+  },
+  {
+    "id": "bts-bradley",
+    "name": "BTS Sales \u2014 Bradley / Cambridge Chiro",
+    "date": "2026-03-17",
+    "type": "BTS Sales",
+    "attendees": [
+      "Bradley Younger"
+    ],
+    "link": "https://fathom.video/calls/603518222",
+    "duration": 21
+  },
+  {
+    "id": "bts-kaz",
+    "name": "BTS Sales \u2014 Kaz / Dog Training",
+    "date": "2026-03-16",
+    "type": "BTS Sales",
+    "attendees": [
+      "Kaz"
+    ],
+    "link": "https://fathom.video/calls/601832189",
+    "duration": 23
+  },
+  {
+    "id": "bts-bec",
+    "name": "BTS Sales \u2014 Bec / Leadership Consultancy",
+    "date": "2026-03-12",
+    "type": "BTS Sales",
+    "attendees": [
+      "Bec"
+    ],
+    "link": "https://fathom.video/calls/598324675",
+    "duration": 37
+  },
+  {
+    "id": "bts-cassie",
+    "name": "BTS Sales \u2014 Cassie / Online Fitness Coach",
+    "date": "2026-03-09",
+    "type": "BTS Sales",
+    "attendees": [
+      "Cassie"
+    ],
+    "link": "https://fathom.video/calls/593414745",
+    "duration": 29
+  },
+  {
+    "id": "darshin-lux",
+    "name": "Sev and Darshin \u2014 LUX",
+    "date": "2026-03-18",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Darshin"
+    ],
+    "link": "https://fathom.video/calls/605070388",
+    "duration": 47
+  },
+  {
+    "id": "podcast-kieran",
+    "name": "Kieran Browning x Sevo Show",
+    "date": "2026-02-28",
+    "type": "Podcast",
+    "attendees": [
+      "Kieran Browning"
+    ],
+    "link": "https://fathom.video/calls/582839321",
+    "duration": 101
+  },
+  {
+    "id": "curtis-tom",
+    "name": "Curtis and Tom \u2014 Mark Tilbury lads",
+    "date": "2026-03-30",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Curtis",
+      "Tom"
+    ],
+    "link": "https://fathom.video/calls/619157408",
+    "duration": 54
+  },
+  {
+    "id": "joel-re",
+    "name": "Joel \u2014 Real Estate Content Strategy",
+    "date": "2026-04-13",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Joel"
+    ],
+    "link": "https://fathom.video/calls/634439348",
+    "duration": 54
+  },
+  {
+    "id": "abbey-v360",
+    "name": "Abbey \u2014 Vitality 360 Coaching",
+    "date": "2026-04-09",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Abbey"
+    ],
+    "link": "https://fathom.video/calls/631614719",
+    "duration": 89
+  },
+  {
+    "id": "uk-email",
+    "name": "BTS Sales \u2014 UK Secure Email / Harry & Mike",
+    "date": "2026-04-13",
+    "type": "BTS Sales",
+    "attendees": [
+      "Harry",
+      "Mike"
+    ],
+    "link": "https://fathom.video/calls/634720813",
+    "duration": 28
+  },
+  {
+    "id": "dental-shoot",
+    "name": "BTS Production \u2014 Dental Clinic Reveal",
+    "date": "2026-04-13",
+    "type": "BTS Sales",
+    "attendees": [
+      "Angela",
+      "Jarryd"
+    ],
+    "link": "https://fathom.video/calls/634497383",
+    "duration": 22
+  },
+  {
+    "id": "prashanth-re",
+    "name": "Prashanth/Raf \u2014 Real Estate Times Podcast",
+    "date": "2026-04-10",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Prashanth",
+      "Raf"
+    ],
+    "link": "https://fathom.video/calls/632382934",
+    "duration": 37
+  },
+  {
+    "id": "bts-joanne",
+    "name": "BTS Sales \u2014 Joanne / Breathwise Wellness",
+    "date": "2026-03-02",
+    "type": "BTS Sales",
+    "attendees": [
+      "Joanne"
+    ],
+    "link": "https://fathom.video/calls/585078036",
+    "duration": 31
+  },
+  {
+    "id": "bts-erin",
+    "name": "BTS Sales \u2014 Erin / Air Conditioning",
+    "date": "2026-03-02",
+    "type": "BTS Sales",
+    "attendees": [
+      "Erin"
+    ],
+    "link": "https://fathom.video/calls/585095572",
+    "duration": 17
+  },
+  {
+    "id": "bts-johnny",
+    "name": "BTS Sales \u2014 Johnny / Enagic Affiliate",
+    "date": "2026-03-01",
+    "type": "BTS Sales",
+    "attendees": [
+      "Johnny"
+    ],
+    "link": "https://fathom.video/calls/585007525",
+    "duration": 23
+  },
+  {
+    "id": "bts-multiskill",
+    "name": "BTS Sales \u2014 Multi-Skill Prospect",
+    "date": "2026-03-18",
+    "type": "BTS Sales",
+    "attendees": [
+      "Prospect"
+    ],
+    "link": "https://fathom.video/calls/605602288",
+    "duration": 17
+  }
+];
+const ENTRIES=[
+  {
+    "id": "ga1-01",
+    "title": "Answer It In A Video",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Whatever your customers are asking you, answer it as a video. Don't reply to the comment or DM with text. Record yourself answering the question, post it everywhere. This is the single fastest way to become the dominant force in your industry because most people can't be bothered.",
+    "context": "Sev's origin story: someone asked on TikTok 'what do you do on weekends?' He answered in a video showing his wedding photography. Got 2 bookings ($6K) from that one organic post. Led to being booked out for 2 years.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "core-principle",
+      "organic",
+      "they-ask-you-answer"
+    ]
+  },
+  {
+    "id": "ga1-02",
+    "title": "Build A Running Question Bank",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "Generate a master list of every question you've ever been asked by a customer. Automate the collection. Every time a new question comes in through DMs, emails, calls, or in-person, add it to the list. Then systematically answer each one on camera. FaceTime style, like your mum asked you about your business.",
+    "context": "Given as the first actionable step for all attendees before any creative work begins.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "system",
+      "they-ask-you-answer",
+      "automation"
+    ]
+  },
+  {
+    "id": "ga1-03",
+    "title": "The Venn Diagram of Content",
+    "category": "strategy",
+    "funnel": [
+      "TOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Two circles overlapping. One circle: what YOU are into. Other circle: what THEY (your customer) are into. Who matters more? Them. You have to figure out what they like to consume that you can put out that makes sense and comes back to your offer. Because you don't know yet, you have to put out a lot of different content. Experiment until you find the overlap.",
+    "context": "Given to Vin (Perform Strength & Nutrition Club) when discussing content direction for a gym membership targeting busy women / brides-to-be.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "audience-research",
+      "testing",
+      "content-market-fit"
+    ]
+  },
+  {
+    "id": "ga1-04",
+    "title": "The 10% Outlier Rule",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "If you put out 100 pieces of content (even 10), roughly 10% will perform better than the rest. Those outliers become your evergreen content. They go into the next batch as the foundation. Then you compound: 80% what works, 20% experimental. Rinse, repeat. The math is simple but most people never get to 100 to see it.",
+    "context": "Given to Vin when explaining how to figure out content direction for a new niche pivot without guessing.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "data-driven",
+      "compound",
+      "80-20",
+      "testing"
+    ]
+  },
+  {
+    "id": "ga1-05",
+    "title": "Top of Funnel: Meme-Style Pain Points",
+    "category": "formats",
+    "funnel": [
+      "TOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "The easiest stuff to post is top-of-funnel. Something relatable, a pain point. You're at the studio setting something up, or in a relatable scene. Text overlaid in the middle. 7-12 second scene. These are the lottery tickets that pull strangers into your world.",
+    "context": "Explained to Vin as the first content layer to build before middle and bottom funnel.",
+    "businessTypes": [
+      "Photography Studio",
+      "Personal Trainer",
+      "All"
+    ],
+    "tags": [
+      "memes",
+      "relatable",
+      "short-form",
+      "pain-points"
+    ]
+  },
+  {
+    "id": "ga1-06",
+    "title": "Middle of Funnel: Answer The Questions",
+    "category": "formats",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "The questions people would ask you before buying. This includes questions from YOUR customers AND questions you find on competitors' social media. If a competitor has been in the field longer, their audience is asking questions publicly. Take those questions and answer them yourself. Authentically.",
+    "context": "Given to James (photography studio membership) and extended to all attendees as a universal tactic.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "they-ask-you-answer",
+      "competitor-research",
+      "trust-building"
+    ]
+  },
+  {
+    "id": "ga1-07",
+    "title": "Bottom of Funnel: Success Stories, Not Case Studies",
+    "category": "formats",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Bottom of funnel is your proof of concept. Call them 'success stories' not 'case studies' because case studies means you tried. You didn't try, you succeeded. Harvest from existing customers: what got them in, why is it beneficial day-to-day. Share that as content.",
+    "context": "Given to James when he confirmed he has existing studio members but wasn't leveraging them for content.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "social-proof",
+      "testimonials",
+      "customer-voice"
+    ]
+  },
+  {
+    "id": "ga1-08",
+    "title": "Scrape Competitor Questions",
+    "category": "strategy",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "Go to your competitors' social media. Find the questions their audience is asking, especially unanswered ones. Take those questions and answer them yourself in video. Sev did this in Facebook wedding groups: other vendors too slow to answer, he answered in video, posted everywhere, got a shit ton of clients.",
+    "context": "Expanded from James's photography question into a universal tactic for all attendees.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "competitor-intelligence",
+      "speed",
+      "they-ask-you-answer"
+    ]
+  },
+  {
+    "id": "ga1-09",
+    "title": "The TV Show Discovery Analogy",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "mindset",
+    "description": "Have you ever discovered a TV show three seasons in? What did you do? You went back to the first season and watched them all. That's what happens with your content. Someone finds you now, loves it, goes back and binges everything. Your early content isn't wasted. It's your back catalogue waiting to be discovered.",
+    "context": "Given to Wendy (web dev agency) to reframe the concern that early content won't perform well.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "long-game",
+      "compound",
+      "content-library"
+    ]
+  },
+  {
+    "id": "ga1-10",
+    "title": "Voice Memo to AI Transcription Workflow",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "Step 1: Open your phone's memo/voice recorder app. Step 2: Just start talking, answer the question like someone called you and asked. Step 3: Press stop. Step 4: On iPhone, tap the blue button at the top of the recording, then the speech bubble icon bottom-left. It transcribes automatically. Step 5: Select all, copy. Step 6: Paste into AI. Step 7: Tell the AI to paraphrase your 5-minute yap into a 60-second script.",
+    "context": "Given to Travis who said he's 'so bad for social media' and doesn't like listening to his own voice. Sev demonstrated in real-time.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "ai-workflow",
+      "scripting",
+      "content-creation",
+      "friction-reduction"
+    ]
+  },
+  {
+    "id": "ga1-11",
+    "title": "AI Cadence Merging (Format Borrowing)",
+    "category": "ai",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "Find someone online whose communication style you love. Grab their viral video, transcribe it. Tell the AI: 'Analyze how they communicate, their format, their flow.' Then take your own 5-minute voice memo yap and tell the AI to bring them together. Your authentic words in their proven format. That's what the hotshots are doing.",
+    "context": "Extended from the voice memo workflow for Travis. Sev explained this as the method top creators actually use.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "ai-workflow",
+      "format-borrowing",
+      "content-creation"
+    ]
+  },
+  {
+    "id": "ga1-12",
+    "title": "Meme Repurposing with AI",
+    "category": "ai",
+    "funnel": [
+      "TOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "See a good meme while scrolling? Screenshot it. Put it into AI. Say: 'I like this meme format, here's what it is, it's for this niche I do.' AI generates 10 variations. One will unlock your creativity. Sev has had multiple viral meme posts from just this technique.",
+    "context": "Shared with all attendees as a practical hack for overcoming creative block.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "ai-workflow",
+      "memes",
+      "creative-block",
+      "content-ideas"
+    ]
+  },
+  {
+    "id": "ga1-13",
+    "title": "The Lottery Ticket Metaphor",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "mindset",
+    "description": "Every piece of content you create is a permanent lottery ticket. Unlike real lottery tickets, these don't expire. When you find one that hits, you want to use those numbers again. Compound the winners. At 30 posts/month, 10% is 3 potential winners. At 12 posts/month, 10% is barely 1.",
+    "context": "Given to Travis when discussing posting frequency. Used to make the math tangible.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "compound",
+      "volume",
+      "data-driven",
+      "consistency"
+    ]
+  },
+  {
+    "id": "ga1-14",
+    "title": "Set The Floor, Not The Ceiling",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Don't set what you need to make. Set a minimum. Set the floor. The non-negotiable. 'I need to make at least 3 videos this week.' Then set a goal of 10. When you hit 3, you feel good. If you fall short of 10, you don't spiral. Minimum 3 reels per week is the benchmark for everyone.",
+    "context": "Given to Travis when he asked about posting frequency. 3/week minimum, stories daily if possible.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "consistency",
+      "habits",
+      "non-negotiable",
+      "benchmarks"
+    ]
+  },
+  {
+    "id": "ga1-15",
+    "title": "WIIFM: Be The DJ",
+    "category": "brand",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "WIIFM = What's In It For Me. You need to be the DJ of Radio WIIFM. Every piece of content, from the first frame: is the viewer instantly realizing this is directly valuable to them, or is it opening curiosity about something in their life? It's one of the two. That's it. Nothing else.",
+    "context": "Given to Sherien (podcaster pivoting to personal branding content) when reviewing her grief-themed post that focused on her story without connecting it to viewer value.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "audience-first",
+      "value-proposition",
+      "content-filter"
+    ]
+  },
+  {
+    "id": "ga1-16",
+    "title": "Educator vs Journeyman",
+    "category": "brand",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "From Caleb Ralston (the guy behind GaryVee and Alex Hormozi's content). Two types of content creators: Educator or Journeyman/woman. A journeyman documents the path from day one. An educator has done it all and shares knowledge. Educators need credibility and WIIFM. Both work. Know which one you are.",
+    "context": "Explained to Sherien when helping her identify whether her content should be educational or documentary-style.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "caleb-ralston",
+      "content-identity",
+      "personal-brand",
+      "positioning"
+    ]
+  },
+  {
+    "id": "ga1-17",
+    "title": "USPersonality > USP",
+    "category": "brand",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Not Unique Selling Point. Not Unique Selling Proposition. Unique Selling PERSONALITY. What stands out in the sea of shit? 99% of competitors are doing the same thing. Find what they're NOT doing and do that. Sev found that wedding photographers didn't want to be in front of camera. He put himself in front of camera. Booked out for 2 years.",
+    "context": "Given to Vin when reviewing his Instagram content. Extended to all attendees as a universal principle.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "differentiation",
+      "personality",
+      "brand-identity"
+    ]
+  },
+  {
+    "id": "ga1-18",
+    "title": "F-Shape Reading Pattern",
+    "category": "hooks",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "People read from top down in an F-shape. Face, then scan right, then down, then across the middle. Design your opening frame knowing this. The date 'November 2017' in a grief video? Most irrelevant element placed in prime real estate. The emotional hook should be where the eyes naturally land.",
+    "context": "Given to Sherien when reviewing her grief post. The date was taking up prime visual real estate while the hook was buried.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "design",
+      "first-frame",
+      "visual-hierarchy"
+    ]
+  },
+  {
+    "id": "ga1-19",
+    "title": "Open The Loop (Curiosity Gaps)",
+    "category": "hooks",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "The first 2 seconds must create an open loop that people feel obligated to close. 'The last time we would celebrate with him' makes you go 'why?' vs 'November 2017, Machu Picchu' which gives you nothing to chase. Think of celebrity death headlines: first reaction is 'how?' That's the loop. Create that.",
+    "context": "Given to Sherien when rewriting her grief video hook. Changed from a date to an emotional curiosity gap.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "hooks",
+      "curiosity",
+      "retention",
+      "first-2-seconds"
+    ]
+  },
+  {
+    "id": "ga1-20",
+    "title": "The 5 Content Pillars",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Top 5 things people always search for: 1) Pain points & problems. 2) Comparisons (this or that?). 3) Best-of lists (S tier ranking videos). 4) Success stories (tell the story with receipts). 5) Cost/pricing. #5 is the one people hate most, but AI is searching for those answers everywhere. It's not just about going viral, it's about becoming SEARCHABLE.",
+    "context": "Given to Wendy (web dev agency) as the starting framework for her content strategy. Applies universally.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "they-ask-you-answer",
+      "big-5",
+      "searchability",
+      "pricing-content",
+      "ai-search"
+    ]
+  },
+  {
+    "id": "ga1-21",
+    "title": "Searchable Beats Viral",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "1.6 million followers on TikTok. Doesn't fucking matter. You need to become more searchable than viral. If you get good search AND good viral, you'll book out quickly. But chasing viral alone is kidding yourself. 1,000 views and 1,000 customers > a million views and no customers.",
+    "context": "Given to the full group. Sev used his own 1.6M TikTok following as the counter-example.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "seo",
+      "ai-search",
+      "geo-thesis",
+      "discoverability"
+    ]
+  },
+  {
+    "id": "ga1-22",
+    "title": "$10K From 1,100 Views (Kyle's Knee Pain Video)",
+    "category": "sales",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "case-study",
+    "description": "Kyle, a personal trainer, made one video: 'Are your knees sore during or after a leg day?' Moving, squatting, straight to the question. 1,100 views. Got TWO $5,000 customers from it. $10K from one video most people would think 'didn't do well.' Views are vanity. Revenue is sanity.",
+    "context": "Shown to Vin and the full group as proof that views don't equal value. Kyle is one of Sev's students.",
+    "businessTypes": [
+      "Personal Trainer",
+      "All"
+    ],
+    "tags": [
+      "case-study",
+      "roi",
+      "low-views-high-revenue",
+      "they-ask-you-answer"
+    ]
+  },
+  {
+    "id": "ga1-23",
+    "title": "Wayne The Builder: 500K Views From Static + Voiceover",
+    "category": "sales",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "case-study",
+    "description": "Wayne had 700 followers, timid on camera. Made a static image video with voiceover: 'The beauty of timber, and the strength of aluminium.' 3 minutes long. 500K views, 100 quotes (~$5K each). Then did the same thing again: 1.3M views, 900 more bookings. 90% from interstate but still 100 local leads organically.",
+    "context": "Shown to the full group as an example of what happens when you find what works and double down.",
+    "businessTypes": [
+      "Trades",
+      "Construction",
+      "All"
+    ],
+    "tags": [
+      "case-study",
+      "static-content",
+      "voiceover",
+      "compound-winners"
+    ]
+  },
+  {
+    "id": "ga1-24",
+    "title": "CapCut Templates at Scale",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "In CapCut Pro, go to Templates at the bottom. Search your niche (e.g., 'online gym coach'). Find a template that matches your vibe. It tells you how many clips you need. If you have those clips, plug them in. Done in 2 minutes. No thinking about editing, the template handles it.",
+    "context": "Demonstrated live for Kevin (online fitness coach) as an alternative to talking-head content.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "capcut",
+      "templates",
+      "editing",
+      "scale",
+      "low-effort"
+    ]
+  },
+  {
+    "id": "ga1-25",
+    "title": "Instagram Trials = Comedy Club Testing",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Instagram Trials lets you show content to non-followers first. It's like what comedians do before a world tour: go to small backroom comedy clubs and test material on randoms. Take notes, iterate. If you're unsure about a hook, make two versions, post both as Trials, let the audience decide.",
+    "context": "Given to James when discussing how to test content direction without alienating existing followers.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "instagram",
+      "testing",
+      "a-b-testing",
+      "trials-feature"
+    ]
+  },
+  {
+    "id": "ga1-26",
+    "title": "The Hook Is Not The Title",
+    "category": "hooks",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Don't start your video describing what the video IS. 'Here are 3 things I've learned from interviewing influential people' is a title. A hook is: 'Celebrities don't know shit about business.' THEN the title. The hook punches you. The title describes. Lead with the punch.",
+    "context": "Given to Sherien when reviewing her 2,990-view reel. The opening was descriptive, not provocative.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "hooks",
+      "scripting",
+      "first-2-seconds",
+      "curiosity"
+    ]
+  },
+  {
+    "id": "ga1-27",
+    "title": "Relatability = Virality (Read The Comments)",
+    "category": "platform",
+    "funnel": [
+      "TOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "When a video goes viral, READ THE COMMENTS. They tell you WHY. Sherien's 1.1M view video was a simple meme: 'When you remember you have kids.' Universal, relatable, no language barrier. Comments confirm it. Then reverse engineer: what other universally relatable moments exist in your niche?",
+    "context": "Given to Sherien after analyzing why her only viral post worked while her crafted content didn't.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "virality",
+      "relatability",
+      "reverse-engineering",
+      "comments"
+    ]
+  },
+  {
+    "id": "ga1-28",
+    "title": "Interactive Quizzes via Claude",
+    "category": "ai",
+    "funnel": [
+      "TOF",
+      "MOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "Build a niche-specific quiz using Claude in 5 minutes. Sev made 'What rolling partner are you?' for BJJ. Told Claude to research everything about BJJ, find all the cliche wording and personality types. Posted a screenshot in Stories with a hidden link. Over 200 link clicks. Try this for YOUR niche.",
+    "context": "Sev demonstrated his own BJJ quiz live. Showed the Instagram Story setup with link sticker hidden behind a tap button.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "ai-workflow",
+      "claude",
+      "lead-generation",
+      "stories",
+      "interactive"
+    ]
+  },
+  {
+    "id": "ga1-29",
+    "title": "Dials, Not Switches",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Credit to Brandon. It's not talking head OR meme. They're dials, not switches. Turn one up, turn another down. Test different settings. The actual answer to 'which format works best' is: I don't care what you post as long as you make more money. Sample size of one is fuck all. Post 100, then you'll know.",
+    "context": "Given to Kevin (online fitness coach) who asked whether talking head reels are better than non-talking ones.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "testing",
+      "format-agnostic",
+      "brandon-reference"
+    ]
+  },
+  {
+    "id": "ga1-30",
+    "title": "Pattern Recognition Requires Consistency",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "The algorithm learns what you do when you're consistent. It matches you to the audience looking for you. That pattern recognition doesn't kick in until you've posted consistently enough. One video that does well: compound it, do more, and the algorithm starts working FOR you. The human mind never changes: people want something fast from someone they trust.",
+    "context": "Given to James when discussing why captions matter less than consistency and touchpoints.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "algorithm",
+      "consistency",
+      "compound",
+      "trust"
+    ]
+  },
+  {
+    "id": "ga1-31",
+    "title": "Commentary Versions of Reels",
+    "category": "formats",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "Remember when DVDs had commentary tracks? Make a green screen commentary version of your existing behind-the-scenes reels. Talk over your own content. Explain the setup, the thinking, the technique. Second piece of content from the same footage.",
+    "context": "Given to James when brainstorming how to make his studio behind-the-scenes content more engaging.",
+    "businessTypes": [
+      "Photography Studio",
+      "Creative Agency",
+      "All"
+    ],
+    "tags": [
+      "repurposing",
+      "green-screen",
+      "commentary",
+      "behind-the-scenes"
+    ]
+  },
+  {
+    "id": "ga1-32",
+    "title": "The Wedding Photography Origin Story",
+    "category": "sales",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "case-study",
+    "description": "Sev was a school teacher with a TikTok following and a wedding photography side business. Someone asked 'what do you do on weekends?' He answered in a video. 2 inquiries. $3K per wedding = $6K from one post. 6 months later, booked out for 2 years. Zero marketing spend.",
+    "context": "Sev's opening story to the full group. The foundational example that proves the 'answer it in a video' principle.",
+    "businessTypes": [
+      "Photography",
+      "All"
+    ],
+    "tags": [
+      "origin-story",
+      "organic",
+      "personal-brand",
+      "zero-ad-spend"
+    ]
+  },
+  {
+    "id": "ga1-33",
+    "title": "Data First Month",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "The first month or two of posting is DATA. Just like the learning phase in paid ads, but you're the one learning. Don't judge results in the first 30-60 days. Just collect information about what your audience responds to.",
+    "context": "Given to Vin when he was worried about pivoting niches and not getting traction.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "testing",
+      "learning-phase",
+      "patience",
+      "data-driven"
+    ]
+  },
+  {
+    "id": "ga1-34",
+    "title": "Harvest Existing Customers For BOF Content",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "If you already have customers, harvest from them NOW. Ask: what got you in? Why is it beneficial day-to-day? Their answers become your bottom-of-funnel content. Real voices convert better than your pitch.",
+    "context": "Given to James who confirmed he has existing studio members but wasn't using their testimonials.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "testimonials",
+      "customer-voice",
+      "bottom-funnel",
+      "social-proof"
+    ]
+  },
+  {
+    "id": "ga1-35",
+    "title": "Don't Change Niche Just Because It's Not Working Yet",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "mindset",
+    "description": "Just because it's not working doesn't mean you need to change niche. You might hit a brick wall sooner with a pivot. Before changing direction: have I tested enough? Posted enough? Got enough data? The niche might be fine. Your execution or volume might be the problem.",
+    "context": "Given to Vin who was considering pivoting from 'busy women' to 'brides-to-be' because current content wasn't getting traction.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "patience",
+      "testing",
+      "niche",
+      "premature-pivot"
+    ]
+  },
+  {
+    "id": "ga1-36",
+    "title": "DJI Osmo Pocket 3 Setup",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tool",
+    "description": "DJI Osmo Pocket 3 combo kit: main body, spare battery extender, tripod at the bottom. Put it on your desk. Rotate screen for horizontal. Plug in a Rode wireless mic for better audio. If that's too many steps: get your phone and start yapping.",
+    "context": "Sev demonstrated his exact recording setup live during the call.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "equipment",
+      "osmo-pocket",
+      "rode-mic",
+      "recording-setup"
+    ]
+  },
+  {
+    "id": "ga1-37",
+    "title": "Niche-Specific Targeting In Content (Wear The Veil)",
+    "category": "strategy",
+    "funnel": [
+      "TOF"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "If targeting a specific demographic, put the context INTO the content. Targeting brides? She starts wearing a veil in workout videos. Change hooks: 'most people think their metabolism is damaged' becomes 'most brides-to-be think their metabolism has changed.' Same content, different framing.",
+    "context": "Given to Vin when he asked about pivoting content to target brides and grooms.",
+    "businessTypes": [
+      "Personal Trainer",
+      "Niche Service",
+      "All"
+    ],
+    "tags": [
+      "targeting",
+      "visual-cues",
+      "niche-signaling",
+      "copy"
+    ]
+  },
+  {
+    "id": "ga1-38",
+    "title": "Add All The Elements",
+    "category": "formats",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "tactic",
+    "description": "Check the variables: music? Dialogue? Visual quality? Movement? Text? Personality? Don't just have one element. Keep playing with different variable combinations. You haven't done enough testing until you've tried all the combinations.",
+    "context": "Given to Vin after reviewing several Perform Strength posts that each had 1-2 elements but never the full package.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "production-quality",
+      "variables",
+      "testing",
+      "elements"
+    ]
+  },
+  {
+    "id": "ga1-39",
+    "title": "10 Of Each, See What Happens",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "framework",
+    "description": "Here are 3 ideas. Do at least 10 of each one. See what happens. One attempt is not a test. You need enough volume per format to actually know. 3 ideas x 10 each = 30 pieces minimum before drawing conclusions.",
+    "context": "Given to James as the standard assignment Sev gives 1:1 clients.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "volume",
+      "testing",
+      "sample-size",
+      "sales-focused"
+    ]
+  },
+  {
+    "id": "ga1-40",
+    "title": "Rick Rubin's Creative Act (Mandatory Reading)",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr13",
+    "type": "resource",
+    "description": "Rick Rubin's 'The Creative Act: A Way of Being.' As a creator, it is your duty to read this book. You will just not give a fuck and start doing whatever. There's no rules.",
+    "context": "Recommended to James (photographer) who was overthinking content formats.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "book",
+      "creativity",
+      "rick-rubin",
+      "no-rules"
+    ]
+  },
+  {
+    "id": "d1-01",
+    "title": "6 Content Pillars Framework",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s1",
+    "type": "framework",
+    "description": "Six pillars every service business should build content around: Costs, Pain Points, Success Stories, Comparisons, Best-of Lists, and Practitioner Journey. Each pillar addresses a different stage of the buyer's awareness.",
+    "context": "Established in Daecian's Session 1. Foundation for all subsequent content planning.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "content-pillars",
+      "they-ask-you-answer",
+      "framework"
+    ]
+  },
+  {
+    "id": "d1-02",
+    "title": "6 Content Formats Matrix",
+    "category": "formats",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s1",
+    "type": "framework",
+    "description": "Six distinct video formats to rotate through: Faceless, Memes, Candid, Framed, Visual Storyteller, Talking Head. Cross-reference 6 pillars x 6 formats = 36 content ideas minimum.",
+    "context": "Established in Session 1, refined through Sessions 2-7. The 6x6 matrix became the core content system.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "content-matrix",
+      "formats",
+      "batch-planning"
+    ]
+  },
+  {
+    "id": "d1-03",
+    "title": "Distribution Math (Worst-Case)",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s1",
+    "type": "framework",
+    "description": "Worst-case: 10 videos/month > 10K views > 10% engage > 10% inquire > 10% convert = 10 clients. Even worst-case percentages, consistent volume produces results.",
+    "context": "Given to Daecian in Session 1 to overcome analysis paralysis.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "math",
+      "conversion",
+      "volume",
+      "worst-case"
+    ]
+  },
+  {
+    "id": "d2-01",
+    "title": "SAO Framework (Situation-Action-Outcome)",
+    "category": "formats",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "daecian-s2",
+    "type": "framework",
+    "description": "For success stories: Situation (where they were), Action (what you did together), Outcome (result with numbers). Builds trust without feeling salesy. Reputation-first content.",
+    "context": "Given in Session 2 when Daecian feared looking like a 'course bro.' SAO is the counter.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "storytelling",
+      "case-studies",
+      "social-proof",
+      "reputation"
+    ]
+  },
+  {
+    "id": "d2-02",
+    "title": "80/20 Content Mix",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s2",
+    "type": "framework",
+    "description": "80% broad/relatable content (memes, inspiration, pain points) + 20% direct educational. The 80% gets reach. The 20% gets trust. Both together get sales.",
+    "context": "Given in Session 2. Mapped to funnel: TOF = memes/flex, MOF = educational, BOF = testimonials.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "content-mix",
+      "80-20",
+      "reach-vs-trust"
+    ]
+  },
+  {
+    "id": "d3-01",
+    "title": "Andromeda Algorithm: First 2-5 Seconds",
+    "category": "hooks",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s3",
+    "type": "framework",
+    "description": "Instagram's Andromeda algorithm scrapes the first 2-5 seconds for relevance keywords. If you don't mention niche keywords in that window, the algorithm can't match you. Fix: front-load keyword-rich hooks in the first 2-5 seconds.",
+    "context": "Discovered during Session 3 performance review. Early results 2.5K-8K views but hooks too slow.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "algorithm",
+      "instagram",
+      "keywords",
+      "hooks",
+      "first-2-seconds"
+    ]
+  },
+  {
+    "id": "d4-01",
+    "title": "Voice Memo > Batch Record > Outsource",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s4",
+    "type": "framework",
+    "description": "Full workflow: Step 1: Voice memos throughout the week. Step 2: Transcribe via Claude. Step 3: Batch-record all week's videos in one session. Step 4: Outsource editing. Benchmark: Pax delivers at $100/video, under 24hr turnaround.",
+    "context": "Given in Session 4 after identifying filming blocks and scripting aversion as the main bottleneck.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "workflow",
+      "batch-recording",
+      "outsource-editing",
+      "friction-reduction"
+    ]
+  },
+  {
+    "id": "d4-02",
+    "title": "YouTube Shorts as GEO/AI Search Play",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s4",
+    "type": "framework",
+    "description": "YouTube Shorts targeting high-intent search + AI search (Google Gemini). YouTube has a privileged position in AI-cited results. Workflow: Tokscript to download competitor transcripts, Gemini to analyze and generate ideas.",
+    "context": "Introduced in Session 4 as the long-term content bet. Reinforced in Sessions 5-7.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "youtube-shorts",
+      "geo-thesis",
+      "ai-search",
+      "long-term"
+    ]
+  },
+  {
+    "id": "d5-01",
+    "title": "Don't Split Test Your Way Into Bankruptcy",
+    "category": "sales",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s5",
+    "type": "case-study",
+    "description": "Daecian ran a 2-month split test of a new front-end offer. Leads dropped from 500/mo to 6. Burned cash for 3 months. The $8/mo offer had the highest conversion rate all along. Lesson: don't abandon what's working. Revert and iterate from strength.",
+    "context": "Session 5 was a crisis session. The failed split test nearly killed cash flow.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "ads",
+      "split-testing",
+      "crisis",
+      "revert-to-proven"
+    ]
+  },
+  {
+    "id": "d6-01",
+    "title": "Yap to Script: Claude + Notion CMS Workflow",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s6",
+    "type": "framework",
+    "description": "Record voice notes ('yaps') throughout the day as ideas hit you. Transcribe them. Feed the transcription into Claude with instructions to generate a script, hook options, and a shot list. Claude outputs directly into a Notion CMS template. The friction between 'I had an idea' and 'I have a ready-to-film script' collapses from hours to minutes. This enables high-volume content batching without creative burnout.",
+    "context": "Introduced to Daecian in Session 6 as the replacement for his scripting bottleneck. The system removes the blank-page problem because you're never starting from zero, you're starting from your own spoken thoughts.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "ai-workflow",
+      "claude",
+      "notion",
+      "voice-memo",
+      "scripting",
+      "batch-content"
+    ]
+  },
+  {
+    "id": "d6-02",
+    "title": "Notion DM Pipeline (Human-Led, Not Bot-Led)",
+    "category": "ai",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "daecian-s6",
+    "type": "framework",
+    "description": "Build a Notion 'Instagram DM Pipeline' that tracks every follower interaction and DM lead. Replace generic ManyChat bot responses with tailored, human-led conversations. The pipeline shows who DMed, what they asked, where they are in the buying journey, and what follow-up is needed. Bots get you the lead. Humans close the deal. The pipeline ensures no lead falls through the cracks.",
+    "context": "Introduced in Daecian Session 6 as a replacement for the ManyChat-only approach. ManyChat handles initial capture, but the Notion pipeline manages the relationship from there.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "notion",
+      "dm-pipeline",
+      "lead-management",
+      "human-led",
+      "manychat"
+    ]
+  },
+  {
+    "id": "d6-03",
+    "title": "The Guide Framework (StoryBrand 7)",
+    "category": "brand",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s6",
+    "type": "framework",
+    "description": "Stop being the hero of your content. Be the guide. The audience is the hero. You are the mentor who helps them win. Reframe personal stories so they serve the audience: your tax debt story isn't about YOU suffering, it's a preventative warning for e-com owners so THEY don't make the same mistake. StoryBrand 7 structure: Character (them) has a Problem, meets a Guide (you), who gives them a Plan, calls them to Action, helps them avoid Failure, and leads them to Success.",
+    "context": "Given to Daecian in Session 6 when reviewing his personal story content. His 'tax debt' video was hero-framed (my struggle). Needed to be guide-framed (here's how to avoid my mistake).",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "storybrand",
+      "guide-framework",
+      "audience-hero",
+      "narrative",
+      "reframing"
+    ]
+  },
+  {
+    "id": "d6-04",
+    "title": "Dunning-Kruger Content Mapping",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s6",
+    "type": "framework",
+    "description": "Map your content to where your audience sits on the Dunning-Kruger curve. Three stages need different content: PREVENTION (beginners on Mt. Stupid, warn them about pitfalls before they happen), OPTIMIZATION (people making money but approaching the Valley of Despair, guide them to avoid the crash), SOLUTION (people already in crisis, direct them to the right resources). Each stage has different pain points and different content that resonates.",
+    "context": "Used in Daecian Session 6 to structure content pillars around audience awareness stages. Prevents the mistake of only creating content for one stage while ignoring the others.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "dunning-kruger",
+      "awareness-stages",
+      "content-mapping",
+      "prevention",
+      "optimization"
+    ]
+  },
+  {
+    "id": "d6-05",
+    "title": "Transparency As A Hook (Explain Your Pricing Model)",
+    "category": "sales",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "daecian-s6",
+    "type": "tactic",
+    "description": "Create content that openly explains WHY your pricing is what it is. If your front-end offer is cheap ($8/month), explain: 'The low price is possible because the real business is the high-ticket service. I don't need your $8. I need you to succeed so you use our logistics.' This 'with or without you' attitude builds massive trust because there's no hidden agenda. Pricing transparency is one of the top 5 things people search for. Be the one who answers it.",
+    "context": "Daecian's $8/month Profit Partners model. The low price is subsidized by the logistics arm. Sev told him to make content explaining this openly because the transparency itself is the sales argument.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "pricing-transparency",
+      "trust",
+      "they-ask-you-answer",
+      "business-model",
+      "honesty"
+    ]
+  },
+  {
+    "id": "d6-06",
+    "title": "Morning Education, Afternoon Memes (2x Daily Cadence)",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s6",
+    "type": "tactic",
+    "description": "Post educational content in the morning (when your audience is focused, commuting, or problem-solving) and memes in the afternoon (when they're scrolling casually for entertainment). Two posts per day, Mon-Fri. The morning post attracts high-intent viewers. The afternoon post gets reach and shares. Together they feed different parts of the funnel simultaneously.",
+    "context": "Given to Daecian in Session 6 as the new posting cadence. Based on audience behavior patterns: morning = intent, afternoon = entertainment.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "posting-cadence",
+      "timing",
+      "education-vs-entertainment",
+      "2x-daily"
+    ]
+  },
+  {
+    "id": "d7-01",
+    "title": "ManyChat Keyword Automation",
+    "category": "ai",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "daecian-s7",
+    "type": "tactic",
+    "description": "Set up a ManyChat automation: specific keyword in DMs triggers auto-DM with offer link. Bypasses link-in-bio friction. 'DM me [keyword] for...' in content drives the funnel.",
+    "context": "Set up in Session 7 as part of the content-to-sales automation layer.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "manychat",
+      "automation",
+      "dm-funnel",
+      "lead-capture"
+    ]
+  },
+  {
+    "id": "d7-02",
+    "title": "Quantity Creates Quality (6-Format System)",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s7",
+    "type": "framework",
+    "description": "Every client win = 6 pieces of content (one per format). Volume is the strategy. In Session 7, Sev used Darko's $101K result as the case study and filmed 3 formats live. Same story, six executions.",
+    "context": "Session 7 was the 'quantity creates quality' session. Sev demonstrated by filming live during the call.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "volume",
+      "6-format-system",
+      "repurposing",
+      "one-story-six-videos"
+    ]
+  },
+  {
+    "id": "bts-01",
+    "title": "Video-First Content Workflow",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-luna",
+    "type": "framework",
+    "description": "Record a 5-minute video on a topic first, then transcribe it into a written article. This is faster than writing first because talking is natural, typing is friction. The video lives on YouTube, the transcription becomes a blog post, and the blog embeds the YouTube video for backlink value. One recording session, multiple assets.",
+    "context": "Pitched to Karolina at Luna Legal (family law firm). They had SEO/Google Ads working but zero video content. Sev positioned video-first as the natural extension of their existing search strategy.",
+    "businessTypes": [
+      "Legal",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "video-first",
+      "repurposing",
+      "seo",
+      "youtube",
+      "transcription"
+    ]
+  },
+  {
+    "id": "bts-02",
+    "title": "Podcast as B2B Referral Engine",
+    "category": "strategy",
+    "funnel": [
+      "MOF",
+      "BOF"
+    ],
+    "sourceId": "bts-luna",
+    "type": "tactic",
+    "description": "Launch a podcast interviewing experts in adjacent fields. Dual purpose: (1) positions you as an authority to clients, and (2) generates B2B referrals from the guests themselves. The guest discovers your work through the interview process and sends you business. The podcast is a relationship-building tool disguised as content.",
+    "context": "Pitched to Luna Legal: interview barristers on recurring client questions (de facto relationships, asset protection). Other lawyers discover the barristers through the podcast, which creates a referral loop back to Luna Legal.",
+    "businessTypes": [
+      "Legal",
+      "Professional Services",
+      "B2B",
+      "All"
+    ],
+    "tags": [
+      "podcast",
+      "b2b-referrals",
+      "relationship-building",
+      "authority"
+    ]
+  },
+  {
+    "id": "bts-03",
+    "title": "Zero-Click Purchases",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "bts-luna",
+    "type": "framework",
+    "description": "The goal of content marketing is to create 'zero-click purchases' where clients are ready to hire before the first call. They've consumed so much of your content that by the time they reach out, the sale is already made. Your content did the selling, you just need to confirm the details.",
+    "context": "Explained to Karolina at Luna Legal as the end-state of the They Ask You Answer strategy. Clients arriving pre-sold because they've watched 10+ videos answering their exact questions.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "assignment-selling",
+      "pre-sold",
+      "content-closes",
+      "they-ask-you-answer"
+    ]
+  },
+  {
+    "id": "bts-04",
+    "title": "Personal Brand Bypasses Regulations",
+    "category": "brand",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-melissa",
+    "type": "tactic",
+    "description": "If your industry has advertising regulations that limit what your BUSINESS can say (e.g., no testimonials, restricted titles), build a PERSONAL brand instead. Discuss your expertise as an individual, not under the business entity. The personal brand funnels interest to the business, and the team is positioned as '[Your Name] Certified' to distribute demand away from the founder bottleneck.",
+    "context": "Pitched to Melissa Ree (sleep clinic). AHPRA regulations prohibit testimonials and the title 'sleep psychologist.' Solution: Melissa discusses sleep science under her personal brand, clinic team positioned as 'Melissa Ree Certified.'",
+    "businessTypes": [
+      "Healthcare",
+      "Regulated Industries",
+      "Professional Services"
+    ],
+    "tags": [
+      "personal-brand",
+      "regulation-workaround",
+      "team-positioning",
+      "bottleneck"
+    ]
+  },
+  {
+    "id": "bts-05",
+    "title": "Searchable Video Library > Viral Content",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-melissa",
+    "type": "framework",
+    "description": "For service businesses, build a searchable video library answering common questions. NOT viral content. Viral attracts passive scrollers. Search attracts high-intent leads who are actively looking for your solution at 11pm the night before they decide to book. The library compounds over time. Every video is a permanent employee working 24/7.",
+    "context": "Core strategy pitched to Melissa Ree (sleep clinic). Her niche (insomnia/CBTI) has huge search demand but only 1% of patients receive the right treatment. The library captures that search intent.",
+    "businessTypes": [
+      "Healthcare",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "searchability",
+      "video-library",
+      "high-intent",
+      "evergreen",
+      "geo-thesis"
+    ]
+  },
+  {
+    "id": "bts-06",
+    "title": "Build Social Proof BEFORE Launch",
+    "category": "strategy",
+    "funnel": [
+      "TOF"
+    ],
+    "sourceId": "bts-nick",
+    "type": "tactic",
+    "description": "If you're planning a product launch (Kickstarter, pre-order, etc.), build your social media presence FIRST. Backers and early adopters will check your social profiles to validate legitimacy. An empty profile signals a scam and causes lead loss. Start posting content about the journey, the product development, the why, BEFORE you launch. The social presence IS your credibility.",
+    "context": "Nick (CEO who sold MTI Group for $120M) was planning to launch his 'Grounded' glass tea cup on Kickstarter after a professional video shoot. Sev challenged the timeline: build the audience first, then launch.",
+    "businessTypes": [
+      "Product",
+      "E-commerce",
+      "Startup"
+    ],
+    "tags": [
+      "launch-strategy",
+      "social-proof",
+      "kickstarter",
+      "pre-launch"
+    ]
+  },
+  {
+    "id": "bts-07",
+    "title": "B-Roll Library as Production Value Multiplier",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-nick",
+    "type": "tactic",
+    "description": "Create a large library of short, high-quality product clips (B-roll). These get overlaid on talking-head videos (A-roll) during editing to massively increase production value without additional filming sessions. One B-roll shoot gives you months of elevated content. Always request B-roll from any professional video shoot.",
+    "context": "Advised to Nick for his Grounded product. He had a pro video shoot coming up. Sev told him to request all raw B-roll clips as separate assets for ongoing content use.",
+    "businessTypes": [
+      "Product",
+      "E-commerce",
+      "All"
+    ],
+    "tags": [
+      "b-roll",
+      "production-value",
+      "editing",
+      "asset-library"
+    ]
+  },
+  {
+    "id": "bts-08",
+    "title": "The 'Learning Library' Concept",
+    "category": "strategy",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "bts-kaz",
+    "type": "framework",
+    "description": "Build a 'learning library' of content that answers every question a prospect would ask before buying. This does two things: (1) saves you from repeating yourself on calls, because you can send the video, and (2) positions you as the authority who's already thought of everything. The library IS your marketing system. It works while you sleep.",
+    "context": "Pitched to Kaz (dog trainer in Perth) who hates social media but was spending hours on repetitive client calls. The library automates the education step of the sales process.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "learning-library",
+      "automation",
+      "authority",
+      "they-ask-you-answer"
+    ]
+  },
+  {
+    "id": "bts-09",
+    "title": "Dominate When Competition Is Thin",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-kaz",
+    "type": "mindset",
+    "description": "If you have only one or two competitors in your niche locally, that's not a problem. That's an opportunity to dominate with volume. Most local service businesses have zero content strategy. Be the one who does. First mover advantage in content is massive because the library compounds and competitors can't catch up overnight.",
+    "context": "Kaz uses a specific Melbourne-based dog training method with only one other trainer in Perth. Sev identified this as a blue ocean for content domination.",
+    "businessTypes": [
+      "Local Service",
+      "Niche Service",
+      "All"
+    ],
+    "tags": [
+      "first-mover",
+      "local-seo",
+      "blue-ocean",
+      "market-domination"
+    ]
+  },
+  {
+    "id": "bts-10",
+    "title": "Content System Solves Camera Fear",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-bec",
+    "type": "framework",
+    "description": "Camera fear and perfectionism are the two biggest blockers for business owners. The solution isn't exposure therapy. It's SYSTEMS. When you have a clear process (question bank, script, format, shoot day), the fear shrinks because you're executing a checklist, not performing. The workshop model (walk in, follow the process, walk out with 20 videos) removes the decision fatigue that causes paralysis.",
+    "context": "Bec (leadership consultancy, 10 years, zero marketing) and Cassie (online fitness coach) both cited camera fear. Sev positioned the workshop as a system that makes the fear irrelevant.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "camera-fear",
+      "systems",
+      "perfectionism",
+      "friction-reduction"
+    ]
+  },
+  {
+    "id": "bts-11",
+    "title": "No Competitors In The Same Workshop",
+    "category": "sales",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-bec",
+    "type": "tactic",
+    "description": "When running group workshops, never put direct competitors in the same cohort. This does two things: (1) removes the discomfort of sharing strategy with a rival, and (2) creates cross-pollination of ideas from different industries. A chiropractor learning from a dog trainer's content approach is more valuable than two chiropractors comparing notes.",
+    "context": "Explained to Bec (leadership consultancy) when she asked about the group workshop format. Sev positions this as a feature, not just logistics.",
+    "businessTypes": [
+      "Workshop",
+      "Education"
+    ],
+    "tags": [
+      "workshop-design",
+      "cohort-management",
+      "cross-pollination"
+    ]
+  },
+  {
+    "id": "bts-12",
+    "title": "ROI Math Close (Simple Breakeven)",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "bts-aleesha",
+    "type": "tactic",
+    "description": "When someone hesitates on price, do the ROI math for them. 'Your yoga class is $200. The workshop is $3,300. That's 14 classes to break even. One new client per month for 14 months, or two clients next month, and you're in profit forever.' Make the math so obvious they feel silly not investing. Don't talk features. Talk breakeven.",
+    "context": "Aleesha (yoga/astrology, part-time alongside HR job at Rio Tinto) went from 80% interested to paying in full after Sev showed her the breakeven math: 14 yoga classes = workshop cost recovered.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "roi-close",
+      "breakeven",
+      "sales-technique",
+      "objection-handling"
+    ]
+  },
+  {
+    "id": "rezz-01",
+    "title": "Pivot From Commoditized Packages to Retainers",
+    "category": "sales",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "rezz-audit",
+    "type": "framework",
+    "description": "Selling '10 reels for $3K' is a commodity. Clients compare you on price, you compete with every freelancer on Fiverr, and the work feels transactional. Instead: sell a $10K/month retainer covering strategy + filming + editing + distribution + ads. 5 clients at $10K/month = $600K/year. The deliverable is the OUTCOME (dominate your market), not the asset (a reel).",
+    "context": "96-minute audit with Rezz Shobeyri (Rezztown Studios, video production agency at $10K+/month revenue). Core problem: commoditized offer, 1-in-16 close rate, client-side ghosting disrupting pipeline.",
+    "businessTypes": [
+      "Agency",
+      "Video Production",
+      "Creative Services"
+    ],
+    "tags": [
+      "retainer-model",
+      "pricing",
+      "outcome-based",
+      "commoditization"
+    ]
+  },
+  {
+    "id": "rezz-02",
+    "title": "Lead With ROI Before Revealing Price",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "rezz-audit",
+    "type": "tactic",
+    "description": "Frame the potential financial return BEFORE you reveal the price. 'Based on what we've mapped out, this strategy could generate $X in new revenue over the next 12 months.' THEN: 'The investment is $Y.' When ROI context comes first, the price feels like a fraction of the upside, not a cost.",
+    "context": "Given to Rezz during sales process refinement. His close rate was 1-in-16 partly because pricing came before value framing.",
+    "businessTypes": [
+      "Agency",
+      "Consulting",
+      "All"
+    ],
+    "tags": [
+      "sales-process",
+      "roi-framing",
+      "pricing-psychology",
+      "value-before-price"
+    ]
+  },
+  {
+    "id": "rezz-03",
+    "title": "Qualify The Decision Maker In First 5 Minutes",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "rezz-audit",
+    "type": "tactic",
+    "description": "'Is this your decision to make?' Ask this in the first 5 minutes of every sales call. If the answer is no, you're pitching to the wrong person. Adjust strategy: either get the decision maker on the call, or equip this person with the tools to sell internally. Never do a full pitch to someone who can't say yes.",
+    "context": "Identified in Rezz's sales call analysis as a recurring pattern: high buy-signals but 'I need to check with my partner/boss' killing conversions.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "sales-qualification",
+      "gatekeeper",
+      "decision-maker",
+      "first-5-minutes"
+    ]
+  },
+  {
+    "id": "rezz-04",
+    "title": "Small Deposit Eliminates 'I'll Think About It'",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "rezz-audit",
+    "type": "tactic",
+    "description": "Offer a small deposit ($500) to hold a spot or lock in a date. This eliminates the 'I'll think about it' window. The prospect either commits or passes. Both are better than ghosting. The deposit creates psychological ownership. They're now 'in.' And you've qualified financial readiness.",
+    "context": "Recommended to Rezz to close the gap between high-interest leads and actual bookings. His pipeline had too many 'maybe' leads consuming bandwidth.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "deposit",
+      "urgency",
+      "commitment-device",
+      "sales-close"
+    ]
+  },
+  {
+    "id": "rezz-05",
+    "title": "The Content Domination Engine (Pre-Built Proposal)",
+    "category": "ai",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "rezz-audit",
+    "type": "tool",
+    "description": "Build a custom-coded tool (using Claude or similar) that analyzes a prospect's competitors and generates a complete strategic content plan. Present this as an interactive proposal before the sales call. The prospect sees a pre-built scope of work specific to THEIR business. Creates FOMO: 'this plan already exists, you just need to greenlight it.' Makes the decision a no-brainer.",
+    "context": "Sev demonstrated his Content Domination Engine to Rezz and helped him adapt it for his Motability client pitch. The tool automates the 'wow factor' of the proposal process.",
+    "businessTypes": [
+      "Agency",
+      "Consulting",
+      "All"
+    ],
+    "tags": [
+      "ai-workflow",
+      "proposal-automation",
+      "content-domination-engine",
+      "sales-tool"
+    ]
+  },
+  {
+    "id": "rezz-06",
+    "title": "7-Module Workshop Curriculum",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-crystal",
+    "type": "framework",
+    "description": "The BTS workshop runs 7 modules over 2 days: (1) Brand Architect: define brand voice from reviews. (2) Ideation Engine: brainstorm 100+ content ideas. (3) Frictionless Scripting: structure 20 videos. (4) Production Burn: film all 20. (5) Editing Masterclass: learn CapCut. (6) Digital Salesman: convert social leads to clients. (7) CEO Shift: delegate content production. Output: a complete, repeatable system the business owner can run independently.",
+    "context": "Explained consistently across multiple BTS sales calls (Luna Legal, Crystal/Rustic Charm, Bradley/Cambridge Chiro, Kaz, Bec, Cassie). This is the productized curriculum.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "workshop",
+      "curriculum",
+      "7-modules",
+      "capcut",
+      "delegation",
+      "system"
+    ]
+  },
+  {
+    "id": "ct-01",
+    "title": "New Account > Fixing A Broad Account",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "curtis-tom",
+    "type": "framework",
+    "description": "If your current audience is too broad and you're pivoting to a niche, start a fresh account. Don't try to fix the existing one. When you post niche content on a broad account, the algorithm first shows it to your existing uninterested audience. Low engagement from them suppresses the reach to everyone else. A new, clean account means the algorithm builds your audience from scratch around the RIGHT people.",
+    "context": "Curtis and Tom (Mark Tilbury's team) advising Sev on pivoting from @sevspics entertainment to a business advisory personal brand. They recommended a completely new account rather than trying to shift the existing 1.6M audience.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "algorithm",
+      "niche-pivot",
+      "new-account",
+      "audience-mismatch"
+    ]
+  },
+  {
+    "id": "ct-02",
+    "title": "Two Content Filters: Value + Proven Format",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "curtis-tom",
+    "type": "framework",
+    "description": "Before posting anything, run it through two filters. Filter 1 (Value): Does this content provide value to my target client? Filter 2 (Format): Is this a proven content format? Find formats that already work for others, then adapt with your unique spin. If it passes both filters, post it. If it fails either, don't.",
+    "context": "From Curtis and Tom's 90-day content plan for Sev. Simple decision framework to prevent posting content that wastes time or confuses the algorithm.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "content-filter",
+      "decision-framework",
+      "format-borrowing",
+      "value-first"
+    ]
+  },
+  {
+    "id": "ct-03",
+    "title": "Personal Brand Account > Business Account",
+    "category": "brand",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "curtis-tom",
+    "type": "framework",
+    "description": "Personal brands consistently outperform business accounts. GaryVee's personal account crushes VaynerMedia's business account. People follow people, not logos. Your advisory account should be YOUR name, YOUR face, YOUR personality. The business is what you sell. The person is who they buy from.",
+    "context": "Curtis and Tom reinforcing the personal brand approach for Sev's new advisory account. The 'Attention to Sales' or BMB branded account approach would underperform versus a Sev-branded one.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "personal-brand",
+      "garyvee",
+      "trust",
+      "people-follow-people"
+    ]
+  },
+  {
+    "id": "dar-01",
+    "title": "Reviews Are AI Data Sources (Scrape Keywords)",
+    "category": "ai",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "darshin-lux",
+    "type": "tactic",
+    "description": "Customer reviews are a critical data source for AI recommendation engines. Scrape the keywords and language from your reviews, then use those exact words in your content strategy. When someone asks AI 'best [service] in [city],' the AI pulls from reviews, website content, and video transcripts. If your reviews use the same language as the AI query, you get cited.",
+    "context": "From the GEO partnership conversation between Sev and Darshin. Darshin's agency achieved 61% AI visibility for MD Health over 6 months using this approach.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "geo-thesis",
+      "reviews",
+      "ai-search",
+      "keyword-scraping",
+      "ai-visibility"
+    ]
+  },
+  {
+    "id": "dar-02",
+    "title": "60% of Searches End Without A Click",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "darshin-lux",
+    "type": "framework",
+    "description": "AI overviews now cause 60% of Google searches to end without the user clicking through to any website. This means traditional SEO click-through is dying. The new game is getting your brand MENTIONED in the AI overview itself. Brand searches increase even when direct clicks decrease, because people see your name in the AI answer and then search for you specifically.",
+    "context": "Darshin shared this stat during the GEO partnership exploration. The implication: content must be optimized for AI citation, not just traditional search ranking.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "geo-thesis",
+      "ai-overviews",
+      "zero-click",
+      "brand-search",
+      "seo-death"
+    ]
+  },
+  {
+    "id": "dar-03",
+    "title": "NotebookLM for Client Brand DNA",
+    "category": "ai",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "darshin-lux",
+    "type": "tool",
+    "description": "Upload client documents (PDFs, transcripts, processes, sales calls) into NotebookLM to create a private knowledge base. Then query it with Gemini to extract the client's 'Brand DNA': their voice, their values, their unique language, their customer pain points. This Brand DNA document then informs every piece of content strategy. The AI knows the client better than the client knows themselves.",
+    "context": "Sev demonstrated his NotebookLM workflow to Darshin. He has 18 notebooks spanning client work and personal brand projects. This is a core part of his advisory delivery model.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "notebooklm",
+      "gemini",
+      "brand-dna",
+      "client-onboarding",
+      "ai-workflow"
+    ]
+  },
+  {
+    "id": "d8-01",
+    "title": "Say, Show, Sell, Be Human Framework",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s8",
+    "type": "framework",
+    "description": "Four types of content that cover the full spectrum: SAY (answer common questions, educational), SHOW (proof and case studies with receipts), SELL (reframe your offer as the superior alternative), BE HUMAN (personal stories, origin story, biggest failure, behind the scenes). Every piece of content falls into one of these four categories. Rotate through them for balanced output.",
+    "context": "Introduced in Daecian Session 8 as the content ideation framework for YouTube. Used to generate video ideas for the 'Cost to Start Dropshipping in Australia 2026' pillar video.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "content-framework",
+      "say-show-sell",
+      "be-human",
+      "youtube",
+      "ideation"
+    ]
+  },
+  {
+    "id": "d8-02",
+    "title": "Instagram = Discovery, YouTube = Search",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s8",
+    "type": "framework",
+    "description": "Instagram is a discovery platform: people scroll and find you by accident. YouTube is a search platform: people actively look for answers. Different intent, different strategy. Instagram builds awareness. YouTube builds authority and captures high-intent leads. You need both, but YouTube compounds long-term value because the videos rank in Google search forever.",
+    "context": "Strategic shift in Daecian Session 8 after Instagram validated the content (9+ videos with 10K+ views, 5-6 new group members/day). Next priority: build the YouTube search library.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "instagram",
+      "youtube",
+      "discovery-vs-search",
+      "platform-strategy",
+      "compound"
+    ]
+  },
+  {
+    "id": "d8-03",
+    "title": "Visual Library of Knowledge (Sellable Asset)",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "daecian-s8",
+    "type": "framework",
+    "description": "A YouTube channel full of searchable, educational content becomes a 'visual library of knowledge.' This library is not just marketing, it's a sellable business asset. If you ever exit, the library comes with you or adds value to the sale. Unlike social media followers (which you don't own), a YouTube library with search rankings has tangible, transferable value.",
+    "context": "Positioned to Daecian as the long-term play. Build the library now, it pays dividends forever and adds enterprise value to the business.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "youtube",
+      "content-library",
+      "business-asset",
+      "exit-value",
+      "compound"
+    ]
+  },
+  {
+    "id": "joel-01",
+    "title": "The Money 7 Videos",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "joel-re",
+    "type": "framework",
+    "description": "Seven essential videos every service business needs: (1) Cost & Pricing: be transparent so AI comparison tools find you. (2) Service Fit: define ideal AND non-ideal clients to build trust. (3) 80% Questions: answer common questions with specific real-world examples. (4) Welcome & What to Expect: guide new clients through the process, remove unknowns. (5) Customer Journey: tell a specific client story with names and details. (6) Origin Story: share your personal journey to build unique selling personality. (7) Proof of Claims: show don't tell, live demos or before/after results.",
+    "context": "Given to Joel (real estate agent getting high-volume, low-intent leads from static ads). The Money 7 forms the core of a searchable content library. Each video answers a question people actually Google before hiring an agent.",
+    "businessTypes": [
+      "Real Estate",
+      "Professional Services",
+      "All"
+    ],
+    "tags": [
+      "money-7",
+      "essential-videos",
+      "they-ask-you-answer",
+      "searchability",
+      "trust-building"
+    ]
+  },
+  {
+    "id": "joel-02",
+    "title": "3-Phase Organic Content Strategy",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "joel-re",
+    "type": "framework",
+    "description": "Phase 1 TEST (Months 1-2): Publish high volume to gather data. Success metric is consistent posting, not results. Phase 2 SIGNAL (Months 2-3): Identify winning content themes. Success metric is 2-3 pieces outperforming the rest. Phase 3 DOUBLE DOWN (Month 3+): Turn organic winners into paid ad creative. The organic content that already proved itself with real engagement becomes your best-performing ad.",
+    "context": "Given to Joel as the accountability framework. He committed to publishing a minimum of 12 videos in 30 days to generate enough data for Phase 2.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "3-phase",
+      "organic-to-paid",
+      "testing",
+      "data-driven",
+      "accountability"
+    ]
+  },
+  {
+    "id": "joel-03",
+    "title": "Organic Winners Become Paid Ad Creative",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "joel-re",
+    "type": "tactic",
+    "description": "Don't create ads from scratch. Create organic content first, find what performs, then boost the winners as ads. The content already has social proof (likes, comments, saves). The creative is already validated by real audience behavior. Your ad spend goes further because you're not guessing what works.",
+    "context": "Phase 3 of the 3-Phase Organic Content Strategy given to Joel. Also consistent with Daecian's approach: top-performing Reels repurposed as retargeting ad campaigns.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "organic-to-paid",
+      "ads",
+      "validated-creative",
+      "social-proof"
+    ]
+  },
+  {
+    "id": "ab-01",
+    "title": "48-Hour Approval Deadline",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "abbey-v360",
+    "type": "tactic",
+    "description": "Send content for client approval by Monday 12pm. If no feedback by Wednesday 12pm, publish as-is. This eliminates the bottleneck of clients sitting on content for 4-5 days and stalling your entire pipeline. Frame it as: 'This is how we maintain momentum and ensure your content stays timely.' The deadline protects your schedule and forces the client to engage.",
+    "context": "Given to Abbey whose client Vitality 360 was taking 4-5 business days to approve content, causing scope creep and burnout. The deadline was positioned as a professional standard, not an ultimatum.",
+    "businessTypes": [
+      "Agency",
+      "Freelancer",
+      "All"
+    ],
+    "tags": [
+      "client-management",
+      "approval-process",
+      "scope-creep",
+      "boundaries"
+    ]
+  },
+  {
+    "id": "ab-02",
+    "title": "Enforce Scope, Bill Out-of-Scope",
+    "category": "sales",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "abbey-v360",
+    "type": "tactic",
+    "description": "Re-document your package scope in writing. List every deliverable included in the retainer. When the client requests anything outside that list, respond: 'Happy to do that, it falls outside the current scope so I'll invoice separately.' Most scope creep happens because the scope was never clearly defined OR the provider is afraid to enforce it. Don't be afraid. Boundaries earn respect.",
+    "context": "Given to Abbey dealing with Vitality 360 scope creep: urgent same-day edits, swapping approved content, unbilled work. The client was consuming ~13hrs/week for a $2,400/month retainer (~$43/hr effective rate).",
+    "businessTypes": [
+      "Agency",
+      "Freelancer",
+      "Consulting",
+      "All"
+    ],
+    "tags": [
+      "scope-creep",
+      "client-management",
+      "pricing",
+      "boundaries",
+      "retainer"
+    ]
+  },
+  {
+    "id": "ab-03",
+    "title": "Search-First Strategy: Create Long, Repurpose Short",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "abbey-v360",
+    "type": "framework",
+    "description": "Instead of creating for Instagram first (discovery platform), create for YouTube/blog first (search platform). Make one search-optimized long-form piece, then repurpose into 3-5 short clips for Instagram/TikTok plus graphics for Pinterest. Each asset compounds traffic independently. The long-form piece ranks in Google. The short clips drive awareness. The blog captures text search. One creation session feeds every platform.",
+    "context": "Given to Abbey as the strategic pivot for Vitality 360. Their Instagram carousels were performing but reels were hit-or-miss. Shifting to search-first would create compounding assets instead of disposable social posts.",
+    "businessTypes": [
+      "Agency",
+      "All"
+    ],
+    "tags": [
+      "search-first",
+      "repurposing",
+      "youtube",
+      "blog",
+      "compound",
+      "content-workflow"
+    ]
+  },
+  {
+    "id": "ab-04",
+    "title": "Get Testimonials BEFORE The Contract Ends",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "abbey-v360",
+    "type": "tactic",
+    "description": "Request a video testimonial from your client BEFORE the engagement ends. It's dramatically harder to get a testimonial from a difficult client after you've parted ways. While you're still delivering value and the relationship is active, ask: 'Would you mind recording a quick 60-second video about your experience working with us?' The testimonial becomes your most powerful sales asset for the next client.",
+    "context": "Given to Abbey who was considering ending the Vitality 360 engagement. Sev warned that testimonials from difficult clients evaporate the moment the contract ends.",
+    "businessTypes": [
+      "Agency",
+      "Freelancer",
+      "Consulting",
+      "All"
+    ],
+    "tags": [
+      "testimonials",
+      "client-management",
+      "timing",
+      "social-proof"
+    ]
+  },
+  {
+    "id": "ab-05",
+    "title": "AI-Generated Proposals as Authority Signals",
+    "category": "ai",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "abbey-v360",
+    "type": "tactic",
+    "description": "Use Claude to generate strategic proposals, content plans, and YouTube/SEO strategies that look professional and demonstrate deep expertise. The output is so polished that the client perceives irreplaceable value. In-session example: Claude created a detailed YouTube/SEO strategy for Vitality 360 with 20 high-volume search topics and a full repurposing workflow. The client sees this and thinks 'I could never do this myself.' That's the point.",
+    "context": "Sev demonstrated live during Abbey's coaching session. Built a comprehensive strategy document in real-time using Claude Desktop, then told Abbey to present it to the client as her strategic recommendation.",
+    "businessTypes": [
+      "Agency",
+      "Consulting",
+      "All"
+    ],
+    "tags": [
+      "ai-workflow",
+      "claude",
+      "proposals",
+      "authority",
+      "client-retention"
+    ]
+  },
+  {
+    "id": "kb-01",
+    "title": "The Founder's Bottleneck",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "podcast-kieran",
+    "type": "framework",
+    "description": "Visionary founders solve the 'how to get customers' problem, then become the bottleneck as the business grows. Growth outstrips structure. Chaos, burnout, and the founder touching every escalation. The founder can't be an 'everything manager' and be excellent at all functions. The fix: delegate one entire department with full decision-making authority, then measure results with clear KPIs to build trust without micromanagement.",
+    "context": "Core topic of the Kieran Browning podcast episode. Kieran pivoted from marketing to operations consulting after realizing the real problem founders face isn't getting customers, it's what to do with them after.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "operations",
+      "delegation",
+      "bottleneck",
+      "founder",
+      "scaling"
+    ]
+  },
+  {
+    "id": "kb-02",
+    "title": "Weekly Leadership Meeting (90-Min EOS Rhythm)",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "podcast-kieran",
+    "type": "framework",
+    "description": "A 90-minute weekly leadership meeting for department heads. Review the dashboard, track the 90-day plan, and set weekly goals. This single meeting rhythm replaces the founder being in every conversation. The founder gets a pulse on the whole business in 90 minutes instead of 40 hours. Pair this with an excellent hiring process to recruit 'A players' who can be trusted with authority.",
+    "context": "Kieran described the EOS-inspired operational model he implements for founder-led businesses. The meeting rhythm is the system that manages the business.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "eos",
+      "leadership-meeting",
+      "operations",
+      "kpis",
+      "scaling"
+    ]
+  },
+  {
+    "id": "kb-03",
+    "title": "Minimum Viable Business (3 Things)",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "podcast-kieran",
+    "type": "framework",
+    "description": "To start a side business while employed, you need exactly three things: (1) One way to get customers. (2) One way to fulfill. (3) One way to get paid. That's it. Don't build complex systems, don't learn EOS, don't buy expensive tools. Just-in-time learning (e.g., lead generation when you need leads) beats just-in-case learning (e.g., studying complex systems before you have a single customer).",
+    "context": "Kieran's advice for people wanting to escape the 9-to-5. Start simple, learn as you go. The minimum viable business strips away everything except what generates revenue.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "side-hustle",
+      "minimum-viable",
+      "just-in-time-learning",
+      "simplicity"
+    ]
+  },
+  {
+    "id": "kb-04",
+    "title": "Make Yourself Indispensable Before Quitting",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "podcast-kieran",
+    "type": "tactic",
+    "description": "Before leaving your job to go full-time on your business: make your boss dependent on you. Increase their money, reduce their hassles. Proactively solve problems and present solutions with clear yes/no options to minimize their mental load. This builds bargaining power. Use the newfound efficiency (because you're better at your job) to build the side business during the time you've freed up.",
+    "context": "Kieran's framework for the 9-to-5 escape. Don't quit impulsively. Build from a position of strength where your boss values you so much you can negotiate your exit.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "career-transition",
+      "bargaining-power",
+      "side-hustle",
+      "strategic-exit"
+    ]
+  },
+  {
+    "id": "kb-05",
+    "title": "Expectation Management (Scope In Sales, Contract, Onboarding)",
+    "category": "sales",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "podcast-kieran",
+    "type": "framework",
+    "description": "Unmanaged expectations lead to scope creep and burnout. Define client scope in THREE places: the sales conversation, the contract, and the onboarding process. When expectations are set in all three, there's no ambiguity. When they're not, the client will push boundaries. Have hard conversations early and use the contract as the reference point, not your memory.",
+    "context": "From the operations scaling discussion. Kieran identified this as one of the top 3 systems every service business needs to scale without burning out.",
+    "businessTypes": [
+      "Agency",
+      "Consulting",
+      "Service",
+      "All"
+    ],
+    "tags": [
+      "scope-management",
+      "contracts",
+      "onboarding",
+      "client-expectations",
+      "burnout-prevention"
+    ]
+  },
+  {
+    "id": "kb-06",
+    "title": "Fatherhood Redefines Success (Peace Over Cash)",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "podcast-kieran",
+    "type": "mindset",
+    "description": "Fatherhood causes a 'complete 180' in priorities. Work must now preserve peace. A calm household, fulfilling work, and financial security to enable presence for your kids. Chasing cash at the expense of stability is no longer an option. Success gets redefined: not revenue, but the ability to be present, patient, and stable at home.",
+    "context": "Both Sev and Kieran discussed how becoming fathers fundamentally changed their business decisions. Kieran said he literally changed his personality after his daughter was born.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "fatherhood",
+      "priorities",
+      "work-life",
+      "peace",
+      "presence"
+    ]
+  },
+  {
+    "id": "pr-01",
+    "title": "Episode Architecture (Standalone Clips)",
+    "category": "workflow",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "prashanth-re",
+    "type": "framework",
+    "description": "Structure each podcast episode as 4-6 segments, where each segment is designed to be a standalone 60-90 second clip. This means every single recording session produces: 1 full-length episode, 4-6 short-form clips for social media, and multiple CTAs embedded throughout. The architecture is planned BEFORE recording so you're not hunting for clip-worthy moments in post-production.",
+    "context": "Built into the episode plan for Prashanth's Real Estate Times podcast. First two episodes: 'Cost to Sell a House in Perth 2026' and 'Auction vs Private Treaty.' Each segmented into clippable sections.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "podcast",
+      "episode-architecture",
+      "clipping",
+      "repurposing",
+      "pre-production"
+    ]
+  },
+  {
+    "id": "pr-02",
+    "title": "Lead Magnets From Podcast Content",
+    "category": "sales",
+    "funnel": [
+      "MOF",
+      "BOF"
+    ],
+    "sourceId": "prashanth-re",
+    "type": "tactic",
+    "description": "Create downloadable assets (checklists, guides, templates) that match each podcast episode topic. 'Talking about auctions? Here's a free auction checklist.' The lead magnet captures emails, the podcast builds trust, and the combination converts passive listeners into warm leads. Every episode should have a clear call-to-action pointing to a relevant lead magnet.",
+    "context": "Built into the Real Estate Times podcast strategy. Prashanth's episodes on 'How Auctions Work' would include a downloadable auction checklist to capture buyer/seller emails.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "lead-magnets",
+      "email-capture",
+      "podcast",
+      "cta",
+      "conversion"
+    ]
+  },
+  {
+    "id": "pr-03",
+    "title": "Proof-of-Concept Before Retainer Pitch",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "prashanth-re",
+    "type": "tactic",
+    "description": "Don't pitch a sponsor or partner for an ongoing retainer before you have proof it works. Produce 2-3 episodes as a proof-of-concept, show the results (views, engagement, lead quality), then pitch the ongoing retainer. The sponsor sees real data, not promises. 'Here's what the first two episodes did. Want 12 more months of this?'",
+    "context": "Strategy for pitching Apollo Auctions as an ongoing podcast sponsor. First two episodes are the proof-of-concept. If they perform, Prashanth pitches the retainer. Also applies to REWA founding sponsorship.",
+    "businessTypes": [
+      "Agency",
+      "Podcast",
+      "All"
+    ],
+    "tags": [
+      "sponsorship",
+      "proof-of-concept",
+      "retainer",
+      "data-driven-pitch"
+    ]
+  },
+  {
+    "id": "bts-13",
+    "title": "The 'Share' Metric Triggers Algorithms",
+    "category": "platform",
+    "funnel": [
+      "TOF"
+    ],
+    "sourceId": "bts-joanne",
+    "type": "tactic",
+    "description": "Of all engagement metrics (likes, comments, saves, shares), the 'share' is the most powerful signal to the algorithm. When someone shares your content, they're telling the platform 'this is worth spreading.' Optimize for shareability: create content people want to send to a friend, a colleague, a partner. The question to ask before posting: would someone DM this to someone they know?",
+    "context": "Mentioned in the Joanne/Breathwise call when explaining distribution strategy. The share metric is the highest-weight signal in Instagram's distribution algorithm.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "algorithm",
+      "shares",
+      "distribution",
+      "virality",
+      "engagement"
+    ]
+  },
+  {
+    "id": "bts-14",
+    "title": "Owner Leading Sales Calls IS The Differentiator",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "bts-johnny",
+    "type": "tactic",
+    "description": "When the business owner personally leads the sales call (instead of a salesperson), prospects respond dramatically better. Johnny said the fact that Sev himself was on the call made him feel valued and trusting. This became an ad angle: emphasize that the owner/teacher personally delivers the experience. In a world of outsourced salespeople and generic funnels, the founder's presence IS the premium.",
+    "context": "Discovered during the Johnny/Enagic sales call. Johnny's positive reaction to Sev personally leading the call revealed a powerful differentiator worth building marketing around.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "founder-led-sales",
+      "trust",
+      "differentiation",
+      "ad-angle",
+      "personal-touch"
+    ]
+  },
+  {
+    "id": "bts-15",
+    "title": "Content Creation Paralysis From Multiple Skills",
+    "category": "mindset",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "bts-multiskill",
+    "type": "mindset",
+    "description": "When someone has multiple skills and can't decide which to build a business around, the uncertainty creates content creation paralysis. They don't know what to post because they don't know what they ARE. The fix isn't more thinking. It's the workshop process: define brand, generate 100 ideas, script 20, film them. The data tells you which direction resonates. Let the audience pick your lane.",
+    "context": "Multi-skill prospect had photography, design, and coaching skills but couldn't commit to one for content. Sev positioned the workshop as the way to let the market decide, not her brain.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "analysis-paralysis",
+      "multi-skill",
+      "let-data-decide",
+      "identity"
+    ]
+  }
+];
+CALLS.forEach(c=>{c.entryCount=ENTRIES.filter(e=>e.sourceId===c.id).length});
+const stats={entries:ENTRIES.length,calls:CALLS.length,extracted:CALLS.filter(c=>c.entryCount>0).length,pending:CALLS.filter(c=>c.entryCount===0).length};
+let currentView="knowledge",catFilter=null,funnelFilter=null,expandedId=null,callTypeFilter=null;
+function makeBadge(l,c,s){return`<span class="badge${s?' sm':''}" style="background:${c}18;color:${c}">${l}</span>`}
+function switchView(v){currentView=v;document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.view===v));document.getElementById('view-knowledge').classList.toggle('hidden',v!=='knowledge');document.getElementById('view-calls').classList.toggle('hidden',v!=='calls');document.getElementById('view-topics').classList.toggle('hidden',v!=='topics');if(v==='calls')renderCalls();if(v==='topics')renderTopics()}
+function renderEntries(){const q=document.getElementById('search').value.toLowerCase();const filtered=ENTRIES.filter(e=>{if(catFilter&&e.category!==catFilter)return false;if(funnelFilter&&!e.funnel.includes(funnelFilter)&&!e.funnel.includes("ALL"))return false;if(q){return e.title.toLowerCase().includes(q)||e.description.toLowerCase().includes(q)||e.tags.some(t=>t.includes(q))||e.context.toLowerCase().includes(q)}return true});document.getElementById('result-count').textContent=`Showing ${filtered.length} of ${ENTRIES.length} entries`;if(!filtered.length){document.getElementById('entries-container').innerHTML='<div class="empty"><div class="empty-icon">🔍</div><p>No entries match your filters. Try broadening your search.</p></div>';return}document.getElementById('entries-container').innerHTML=filtered.map(e=>{const cat=CATEGORIES[e.category];const call=CALLS.find(c=>c.id===e.sourceId);const isExp=expandedId===e.id;return`<div class="entry-card${isExp?' expanded':''}" style="border-left-color:${cat.color}" onclick="toggleEntry('${e.id}')"><div class="entry-top"><div class="entry-content"><div class="entry-badges"><span style="font-size:16px">${cat.icon}</span>${makeBadge(cat.label,cat.color)}${e.funnel.filter(f=>f!=='ALL').map(f=>makeBadge(f,'#64748B',true)).join('')}${makeBadge(e.type,'#94A3B8',true)}</div><h3 class="entry-title">${e.title}</h3><p class="entry-desc${isExp?'':' clamped'}">${e.description}</p></div><span class="entry-arrow">▼</span></div><div class="entry-detail"><div style="margin-bottom:12px"><div class="detail-label">Context</div><p class="detail-text italic">${e.context}</p></div><div class="detail-row"><div class="detail-col"><div class="detail-label">Source</div><p class="detail-text">${call?call.name:'Unknown'} (${call?call.date:''})</p></div><div class="detail-col"><div class="detail-label">Applies To</div><p class="detail-text">${e.businessTypes.join(', ')}</p></div></div><div class="tag-row">${e.tags.map(t=>`<span class="tag">#${t}</span>`).join('')}</div></div></div>`}).join('')}
+function toggleEntry(id){expandedId=expandedId===id?null:id;renderEntries()}
+function setCat(k){catFilter=catFilter===k?null:k;renderCatChips();renderEntries()}
+function setFunnel(k){funnelFilter=funnelFilter===k?null:k;renderFunnelChips();renderEntries()}
+function renderCatChips(){let h=`<button class="chip${!catFilter?' active':''}" onclick="setCat(null)">All Categories</button>`;Object.entries(CATEGORIES).forEach(([k,v])=>{const a=catFilter===k;h+=`<button class="chip" style="${a?`border-color:${v.color};background:${v.color}18;color:${v.color}`:''}" onclick="setCat('${k}')">${v.icon} ${v.label}</button>`});document.getElementById('cat-chips').innerHTML=h}
+function renderFunnelChips(){const f={TOF:"Top of Funnel",MOF:"Middle of Funnel",BOF:"Bottom of Funnel"};let h=`<button class="chip sm${!funnelFilter?' active':''}" onclick="setFunnel(null)">All Stages</button>`;Object.entries(f).forEach(([k,v])=>{const a=funnelFilter===k;h+=`<button class="chip sm" style="${a?'border-color:#0D9488;background:rgba(13,148,136,.08);color:#0D9488':''}" onclick="setFunnel('${k}')">${v}</button>`});document.getElementById('funnel-chips').innerHTML=h}
+function setCallType(t){callTypeFilter=callTypeFilter===t?null:t;renderCalls()}
+function renderCalls(){const types=["1:1 Advisory","Group Advisory","BTS Sales","Audit","Podcast","BTS Production"];let ch=`<button class="chip sm${!callTypeFilter?' active':''}" onclick="setCallType(null)">All (${CALLS.length})</button>`;types.forEach(t=>{const n=CALLS.filter(c=>c.type===t).length;if(!n)return;const a=callTypeFilter===t;ch+=`<button class="chip sm" style="${a?'border-color:#0D9488;background:rgba(13,148,136,.08);color:#0D9488':''}" onclick="setCallType('${t}')">${t} (${n})</button>`});document.getElementById('call-type-chips').innerHTML=ch;const tc={"1:1 Advisory":"#6366F1","Group Advisory":"#0D9488","BTS Sales":"#F59E0B",Audit:"#EF4444",Podcast:"#EC4899","BTS Production":"#94A3B8"};const fl=(callTypeFilter?CALLS.filter(c=>c.type===callTypeFilter):CALLS).sort((a,b)=>b.date.localeCompare(a.date));document.getElementById('calls-container').innerHTML=fl.map(c=>`<div class="call-card${c.entryCount>0?' has-entries':''}"><div class="call-info"><div class="call-name-row"><span class="call-name">${c.name}</span>${makeBadge(c.type,tc[c.type]||'#94A3B8',true)}</div><div class="call-meta">${c.date} · ${c.duration?c.duration+'min':'Duration TBD'} · ${c.attendees.join(', ')}</div></div><div class="call-right">${c.entryCount>0?`<span class="call-count">${c.entryCount} entries</span>`:`<span class="call-pending">Awaiting extraction</span>`}${c.link?`<a class="call-link" href="${c.link}" target="_blank" rel="noopener">Fathom ↗</a>`:''}</div></div>`).join('')}
+function renderTopics(){document.getElementById('topics-container').innerHTML=Object.entries(CATEGORIES).map(([k,cat])=>{const ce=ENTRIES.filter(e=>e.category===k);const ty={};ce.forEach(e=>{ty[e.type]=(ty[e.type]||0)+1});return`<div class="topic-card" style="border-top-color:${cat.color}" onclick="setCat('${k}');switchView('knowledge')"><div class="topic-icon">${cat.icon}</div><div class="topic-name">${cat.label}</div><div class="topic-count" style="color:${cat.color}">${ce.length}</div><div class="topic-types">${Object.entries(ty).map(([t,n])=>`<span class="topic-type">${n} ${t}${n>1?'s':''}</span>`).join('')}</div></div>`}).join('')}
+document.getElementById('stat-entries').textContent=stats.entries;document.getElementById('stat-calls').textContent=stats.calls;document.getElementById('stat-extracted').textContent=stats.extracted;document.getElementById('stat-pending').textContent=stats.pending;document.getElementById('footer-text').textContent=`Sev's Knowledge Hub · V2.0 · ${stats.entries} entries from ${stats.extracted} calls · ${stats.pending} calls awaiting extraction`;
+renderCatChips();renderFunnelChips();renderEntries();
+</script>
+</body>
+</html>

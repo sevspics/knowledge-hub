@@ -1,0 +1,353 @@
+[
+  {
+    "id": "group-apr13",
+    "name": "Group Advisory #1",
+    "date": "2026-04-13",
+    "type": "Group Advisory",
+    "attendees": [
+      "James MacLennan",
+      "Travis Ahern",
+      "Vin Coetzee",
+      "Wendy",
+      "Sherien Wissa",
+      "Kevin",
+      "Jordan LEntini"
+    ],
+    "link": null,
+    "duration": 82
+  },
+  {
+    "id": "daecian-s8",
+    "name": "Daecian x Sev — Session 8",
+    "date": "2026-04-09",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/630776560",
+    "duration": 37
+  },
+  {
+    "id": "daecian-s7",
+    "name": "Daecian x Sev — Session 7",
+    "date": "2026-04-03",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/share/ziPzsyQWQzeT_sPLfwXS8SUXLr_RbCWM",
+    "duration": 81
+  },
+  {
+    "id": "rezz-audit",
+    "name": "Rezz Shobeyri — Freedom Equation Audit",
+    "date": "2026-04-06",
+    "type": "Audit",
+    "attendees": [
+      "Rezz Shobeyri"
+    ],
+    "link": "https://fathom.video/calls/625980626",
+    "duration": 96
+  },
+  {
+    "id": "daecian-s6",
+    "name": "Daecian x Sev — Session 6",
+    "date": "2026-03-30",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/618355871",
+    "duration": 82
+  },
+  {
+    "id": "daecian-s5",
+    "name": "Daecian x Sev — Session 5",
+    "date": "2026-03-20",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/607919419",
+    "duration": 59
+  },
+  {
+    "id": "daecian-s4",
+    "name": "Daecian x Sev — Session 4",
+    "date": "2026-03-09",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/589627661",
+    "duration": 84
+  },
+  {
+    "id": "daecian-s3",
+    "name": "Daecian x Sev — Session 3",
+    "date": "2026-02-27",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/581542353",
+    "duration": 51
+  },
+  {
+    "id": "daecian-s2",
+    "name": "Daecian x Sev — Session 2",
+    "date": "2026-02-20",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/573216260",
+    "duration": null
+  },
+  {
+    "id": "daecian-s1",
+    "name": "Daecian x Sev — Session 1",
+    "date": "2026-02-15",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Daecian Sparkes-Young"
+    ],
+    "link": "https://fathom.video/calls/568409930",
+    "duration": null
+  },
+  {
+    "id": "bts-luna",
+    "name": "BTS Sales — Luna Legal",
+    "date": "2026-04-01",
+    "type": "BTS Sales",
+    "attendees": [
+      "Luna Legal"
+    ],
+    "link": "https://fathom.video/calls/621875087",
+    "duration": 46
+  },
+  {
+    "id": "bts-melissa",
+    "name": "BTS Sales — Melissa Ree Sleep Clinic",
+    "date": "2026-04-01",
+    "type": "BTS Sales",
+    "attendees": [
+      "Melissa Ree"
+    ],
+    "link": "https://fathom.video/calls/621777836",
+    "duration": 52
+  },
+  {
+    "id": "bts-nick",
+    "name": "BTS Sales — Nick / Grounded Product",
+    "date": "2026-03-25",
+    "type": "BTS Sales",
+    "attendees": [
+      "Nick"
+    ],
+    "link": "https://fathom.video/calls/613755456",
+    "duration": 45
+  },
+  {
+    "id": "bts-aleesha",
+    "name": "BTS Sales — Aleesha Stinson",
+    "date": "2026-03-25",
+    "type": "BTS Sales",
+    "attendees": [
+      "Aleesha Stinson"
+    ],
+    "link": "https://fathom.video/calls/613425474",
+    "duration": 54
+  },
+  {
+    "id": "bts-crystal",
+    "name": "BTS Sales — Crystal / Rustic Charm Interiors",
+    "date": "2026-03-18",
+    "type": "BTS Sales",
+    "attendees": [
+      "Crystal"
+    ],
+    "link": "https://fathom.video/calls/605162578",
+    "duration": 37
+  },
+  {
+    "id": "bts-bradley",
+    "name": "BTS Sales — Bradley / Cambridge Chiro",
+    "date": "2026-03-17",
+    "type": "BTS Sales",
+    "attendees": [
+      "Bradley Younger"
+    ],
+    "link": "https://fathom.video/calls/603518222",
+    "duration": 21
+  },
+  {
+    "id": "bts-kaz",
+    "name": "BTS Sales — Kaz / Dog Training",
+    "date": "2026-03-16",
+    "type": "BTS Sales",
+    "attendees": [
+      "Kaz"
+    ],
+    "link": "https://fathom.video/calls/601832189",
+    "duration": 23
+  },
+  {
+    "id": "bts-bec",
+    "name": "BTS Sales — Bec / Leadership Consultancy",
+    "date": "2026-03-12",
+    "type": "BTS Sales",
+    "attendees": [
+      "Bec"
+    ],
+    "link": "https://fathom.video/calls/598324675",
+    "duration": 37
+  },
+  {
+    "id": "bts-cassie",
+    "name": "BTS Sales — Cassie / Online Fitness Coach",
+    "date": "2026-03-09",
+    "type": "BTS Sales",
+    "attendees": [
+      "Cassie"
+    ],
+    "link": "https://fathom.video/calls/593414745",
+    "duration": 29
+  },
+  {
+    "id": "darshin-lux",
+    "name": "Sev and Darshin — LUX",
+    "date": "2026-03-18",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Darshin"
+    ],
+    "link": "https://fathom.video/calls/605070388",
+    "duration": 47
+  },
+  {
+    "id": "podcast-kieran",
+    "name": "Kieran Browning x Sevo Show",
+    "date": "2026-02-28",
+    "type": "Podcast",
+    "attendees": [
+      "Kieran Browning"
+    ],
+    "link": "https://fathom.video/calls/582839321",
+    "duration": 101
+  },
+  {
+    "id": "curtis-tom",
+    "name": "Curtis and Tom — Mark Tilbury lads",
+    "date": "2026-03-30",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Curtis",
+      "Tom"
+    ],
+    "link": "https://fathom.video/calls/619157408",
+    "duration": 54
+  },
+  {
+    "id": "joel-re",
+    "name": "Joel — Real Estate Content Strategy",
+    "date": "2026-04-13",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Joel"
+    ],
+    "link": "https://fathom.video/calls/634439348",
+    "duration": 54
+  },
+  {
+    "id": "abbey-v360",
+    "name": "Abbey — Vitality 360 Coaching",
+    "date": "2026-04-09",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Abbey"
+    ],
+    "link": "https://fathom.video/calls/631614719",
+    "duration": 89
+  },
+  {
+    "id": "uk-email",
+    "name": "BTS Sales — UK Secure Email / Harry & Mike",
+    "date": "2026-04-13",
+    "type": "BTS Sales",
+    "attendees": [
+      "Harry",
+      "Mike"
+    ],
+    "link": "https://fathom.video/calls/634720813",
+    "duration": 28
+  },
+  {
+    "id": "dental-shoot",
+    "name": "BTS Production — Dental Clinic Reveal",
+    "date": "2026-04-13",
+    "type": "BTS Sales",
+    "attendees": [
+      "Angela",
+      "Jarryd"
+    ],
+    "link": "https://fathom.video/calls/634497383",
+    "duration": 22
+  },
+  {
+    "id": "prashanth-re",
+    "name": "Prashanth/Raf — Real Estate Times Podcast",
+    "date": "2026-04-10",
+    "type": "1:1 Advisory",
+    "attendees": [
+      "Prashanth",
+      "Raf"
+    ],
+    "link": "https://fathom.video/calls/632382934",
+    "duration": 37
+  },
+  {
+    "id": "bts-joanne",
+    "name": "BTS Sales — Joanne / Breathwise Wellness",
+    "date": "2026-03-02",
+    "type": "BTS Sales",
+    "attendees": [
+      "Joanne"
+    ],
+    "link": "https://fathom.video/calls/585078036",
+    "duration": 31
+  },
+  {
+    "id": "bts-erin",
+    "name": "BTS Sales — Erin / Air Conditioning",
+    "date": "2026-03-02",
+    "type": "BTS Sales",
+    "attendees": [
+      "Erin"
+    ],
+    "link": "https://fathom.video/calls/585095572",
+    "duration": 17
+  },
+  {
+    "id": "bts-johnny",
+    "name": "BTS Sales — Johnny / Enagic Affiliate",
+    "date": "2026-03-01",
+    "type": "BTS Sales",
+    "attendees": [
+      "Johnny"
+    ],
+    "link": "https://fathom.video/calls/585007525",
+    "duration": 23
+  },
+  {
+    "id": "bts-multiskill",
+    "name": "BTS Sales — Multi-Skill Prospect",
+    "date": "2026-03-18",
+    "type": "BTS Sales",
+    "attendees": [
+      "Prospect"
+    ],
+    "link": "https://fathom.video/calls/605602288",
+    "duration": 17
+  }
+]
