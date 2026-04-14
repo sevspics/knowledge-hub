@@ -1,5 +1,21 @@
 [
   {
+    "id": "group-apr14",
+    "name": "Group Advisory #2 — Organic Content Morning",
+    "date": "2026-04-14",
+    "type": "Group Advisory",
+    "attendees": [
+      "Sam Jones",
+      "Jess Jones",
+      "Natania McLeod",
+      "Danuta",
+      "Mary Aitken",
+      "Meg Yates"
+    ],
+    "link": null,
+    "duration": 63
+  },
+  {
     "id": "group-apr13",
     "name": "Group Advisory #1",
     "date": "2026-04-13",

@@ -6641,5 +6641,493 @@
         "notes": "The vulnerability of a 'bad' stat is counterintuitively the strongest trust signal. The 'no judgment' invitation at the end should feel genuinely safe. This is the content that makes people follow you for life."
       }
     }
+  },
+  {
+    "id": "ga2-01",
+    "title": "The Organic Funnel Math",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr14",
+    "type": "framework",
+    "description": "Four numbers in a vertical pipeline: Views > Engagement > Inquiries > Sales. Benchmarks: 10K views from 10 videos per month. 2-10% engagement rate (200-1,000 actions). 10% of those become inquiries (20-100 DMs, emails, calls). 10% close rate gets you 2-10 sales. If your $5K offer closes 2-10 per month, that's $10K-$50K. If sales are zero, work backwards up the pipeline to find the bottleneck. Not getting inquiries? You don't have a link in bio. Not getting engagement? You're not telling them what to do. Not getting views? You're not posting.",
+    "context": "Taught on the whiteboard during the first organic content morning session. Designed as the diagnostic framework so attendees can identify where their pipeline is broken.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "funnel-math",
+      "organic",
+      "benchmarks",
+      "pipeline",
+      "diagnostics"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Screen record a calculator app and type these 4 numbers. This is the math behind every organic funnel.",
+        "body": "Walk through the funnel: 10K views, 2-10% engagement, 10% of those inquire, 10% of those close. Highlight each number on screen as you narrate the breakdown. End on the bottleneck question.",
+        "cta": "Save this so you can run your own numbers tonight. Drop your biggest bottleneck in the comments.",
+        "notes": "Use a real calculator or spreadsheet screen recording. Add text overlays for each funnel stage. Keep transitions snappy, no longer than 45 seconds total."
+      },
+      "meme": {
+        "hook": "POV: You finally do the math on your content strategy.",
+        "body": "Full-screen text showing 10K views > 200-1000 engaged > 20-100 inquiries > 2-10 sales. Cut to a shocked/nodding reaction clip.",
+        "cta": "Send this to someone who says 'content doesn't work.'",
+        "notes": "Use a trending reaction clip for the punchline. Keep it under 10 seconds. The shock factor is the math being so simple and obvious."
+      },
+      "candid": {
+        "hook": "Walking to my car after a coaching call and I have to tell you this. Most people have no clue what their actual funnel numbers are.",
+        "body": "Riff off the cuff about the four numbers: views, engagement, inquiries, sales. Explain how you work backwards to find the bottleneck. Keep it raw and conversational.",
+        "cta": "If you've never mapped these four numbers out for your business, DM me 'funnel' and I'll walk you through it.",
+        "notes": "Film on your phone walking or sitting in the car. No setup, no lighting rig. The energy should feel like you just had a breakthrough you need to share."
+      },
+      "framed": {
+        "hook": "There are only four numbers you need to understand about organic content. Let me break them down.",
+        "body": "Seated at desk, whiteboard or screen behind you. Walk through each stage of the funnel methodically: views, engagement, inquiries, close rate. Use specific percentages and show how to identify where the funnel breaks.",
+        "cta": "Follow for more frameworks that actually make content measurable. Comment 'MATH' if you want the worksheet.",
+        "notes": "Use a whiteboard or pull up a simple slide behind you. This is authority content, so dress it up slightly. Steady camera, clean audio, one take with jump cuts."
+      },
+      "visual-storyteller": {
+        "hook": "A client came to me saying content doesn't generate revenue. I showed them four numbers and everything changed.",
+        "body": "Tell the story: the client's frustration, the moment you pulled up the funnel math, their reaction when they saw the bottleneck. Use graphics or animations to show each funnel stage narrowing down.",
+        "cta": "Save this breakdown. If your funnel has a leak, this is how you find it.",
+        "notes": "Open on the client's problem (anonymized), transition into the framework with motion graphics for each funnel stage. End on the result. SAO: Situation (client stuck), Action (ran the math), Outcome (found the bottleneck, fixed it)."
+      },
+      "talking-head": {
+        "hook": "You don't have a content problem. You have a math problem. Let me prove it in 60 seconds.",
+        "body": "Direct to camera, high energy. Rattle off the four numbers fast, then slow down on the bottleneck concept. Challenge the viewer to actually run these numbers for their business instead of guessing.",
+        "cta": "If you ran these numbers and found your bottleneck, drop it in the comments. I'll tell you exactly what to fix.",
+        "notes": "Lean into the camera on the hook. Use hand gestures to count off each stage. The energy shift from fast to slow when you hit the bottleneck concept is what makes this land."
+      }
+    }
+  },
+  {
+    "id": "ga2-02",
+    "title": "Engagement Hierarchy: Follows > Shares > Comments > Likes",
+    "category": "platform",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr14",
+    "type": "framework",
+    "description": "Rank your engagement metrics in this order. Follows are number one because they opt in to see more of you, and you can nurture them. Shares are second because one share triggers a notification, that person opens the app, watches the video, starts scrolling, and every 4-5 videos Instagram serves an ad. That means Meta makes money, so the algorithm rewards the video that caused the scrolling session. Comments are third because every reply you leave gives someone a notification to come back. Likes are fourth because they increase the likelihood the person sees your next post.",
+    "context": "Drawn on the whiteboard during the organic content morning session, explaining exactly why Instagram rewards shares disproportionately. Builds on bts-13 (The Share Metric) with the full hierarchy.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "engagement",
+      "shares",
+      "algorithm",
+      "platform-mechanics",
+      "organic"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Screen record your Instagram insights and rank these engagement types. Most people get the order completely wrong.",
+        "body": "Show a ranked list appearing on screen: Follows at the top, then Shares, Comments, Likes at the bottom. Narrate why each one matters to the algorithm and to your business. Explain that shares trigger notifications, new scrolling sessions, and ad revenue for Meta.",
+        "cta": "Save this hierarchy. Next time you check your analytics, look at shares and follows first, not likes.",
+        "notes": "Use clean animated text or a tiered graphic. Reveal each tier one at a time for suspense. Add subtle sound effects on each reveal to keep attention."
+      },
+      "meme": {
+        "hook": "Likes. Shares. Follows. They are NOT created equal.",
+        "body": "Show a tier list meme format. Likes in D-tier, Comments in B-tier, Shares in A-tier, Follows in S-tier. Quick cuts, punchy text.",
+        "cta": "Share this with someone still obsessed with likes.",
+        "notes": "Use the tier-list meme format everyone recognizes. Keep it under 12 seconds. The comedy is in how low likes rank when most people obsess over them."
+      },
+      "candid": {
+        "hook": "Quick thought while I'm waiting for coffee. Stop celebrating likes. Here's what actually matters.",
+        "body": "Casual rant about how follows are opt-ins, shares make Meta money (which means the algorithm rewards you), comments create reply notifications, and likes barely move the needle.",
+        "cta": "If you've been chasing likes instead of shares, comment 'guilty' and I won't judge you.",
+        "notes": "Film in a real location, coffee shop or street. Keep it under 45 seconds. The vibe is 'friend giving you a reality check' not 'guru lecturing you.'"
+      },
+      "framed": {
+        "hook": "I'm going to rank every type of engagement from most to least valuable. This changes how you create content.",
+        "body": "Structured breakdown at your desk. Explain each tier: Follows are opt-ins to your content. Shares trigger notifications, new scrolling sessions, and ad revenue, so Meta pushes your content harder. Comments drive reply notifications. Likes only affect next-post visibility.",
+        "cta": "Follow if you want to understand how platforms actually work, not just what gurus tell you.",
+        "notes": "Have a visual ranking behind you or on a screen share. Pause on shares and really drive home the Meta revenue angle, that's the insight most people have never heard."
+      },
+      "visual-storyteller": {
+        "hook": "There's a reason Meta pushes certain posts and buries others. It comes down to money.",
+        "body": "Build the narrative around Meta's business model. Every share triggers a notification, which triggers a new scrolling session, which means more ad impressions, which means more revenue. That's why shares are gold. Walk through each engagement type as a chapter in the story of how the algorithm decides your reach.",
+        "cta": "Save this. Understanding why platforms do what they do is the real cheat code.",
+        "notes": "Use a documentary-style approach. Graphics showing the chain reaction from share to notification to scroll session to ad revenue. This is the 'follow the money' narrative."
+      },
+      "talking-head": {
+        "hook": "A like is worth almost nothing. A share is worth everything. Here's the hierarchy nobody talks about.",
+        "body": "Direct to camera, conviction-heavy. Rank them fast: Follows, Shares, Comments, Likes. Then spend the bulk explaining why shares are so powerful. Shares make Meta money, and Meta rewards what makes Meta money. Period.",
+        "cta": "If this shifted how you think about engagement, share it. Prove the point.",
+        "notes": "The CTA here is intentionally meta. Lean hard into the 'shares make Meta money' line with emphasis. Use a countdown on your fingers as you rank each type."
+      }
+    }
+  },
+  {
+    "id": "ga2-03",
+    "title": "WTA Over CTA (Why-To-Action)",
+    "category": "hooks",
+    "funnel": [
+      "MOF",
+      "BOF"
+    ],
+    "sourceId": "group-apr14",
+    "type": "tactic",
+    "description": "Replace your call to action with a Why-To-Action. Start with the words 'IF YOU' at the end of the video. 'If you found this useful, I'd love to know what resonated. Comment below.' 'If you want this tailored to your situation, send me a DM.' You're inviting them to make the decision, not commanding them. It's the difference between walking up to someone at a bar and saying 'Can I buy you a drink?' versus 'What's the drink of choice here? Just curious, I'm new.' One feels pushy, the other starts a conversation. In organic, limit hard-sell CTAs to 1 in every 10 videos.",
+    "context": "Sam Jones asked whether CTAs go in the video or the description. Sev reframed the entire concept from CTA to WTA, with the bar analogy to illustrate the difference between commanding and inviting.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "cta",
+      "scripting",
+      "organic",
+      "engagement",
+      "wta"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Text on screen: 'Stop saying FOLLOW ME. Start saying IF YOU...' Then show the difference side by side.",
+        "body": "Split screen comparing a hard CTA ('Follow for more tips!') vs. a WTA ('If you're a service business owner struggling with leads, I post about this every week'). Narrate why one feels like a command and the other feels like an invitation. Use the bar analogy: you don't walk up to someone and say 'Be my friend.' You say 'If you're into this too, pull up a seat.'",
+        "cta": "Save this and rewatch it before you film your next video. Your CTAs are probably costing you followers.",
+        "notes": "The side-by-side comparison is the money shot. Use contrasting colors or tones for the two approaches. Keep the bar analogy visual if possible."
+      },
+      "meme": {
+        "hook": "When creators say 'SMASH THAT FOLLOW BUTTON' vs. when someone just says 'if you're dealing with this too, stick around.'",
+        "body": "Use a two-panel reaction: cringe face for the hard CTA, nodding/approving face for the WTA. Full-screen text with each line.",
+        "cta": "Send this to a creator who still says 'like and subscribe.'",
+        "notes": "The cringe factor on the hard CTA is the comedy. Keep it under 10 seconds. The meme does the teaching without feeling like a lesson."
+      },
+      "candid": {
+        "hook": "I stopped using CTAs in my videos and my follow rate went up. Sounds backwards but let me explain.",
+        "body": "Voice memo energy. Explain the shift from 'Call To Action' to 'Why To Action.' Instead of commanding people to follow, you end with 'If you're a [type of person] dealing with [problem], I talk about this all the time.' It's an invitation, not an order. Like at a bar, you don't demand friendship.",
+        "cta": "If you've been ending every video with 'follow for more,' try swapping to 'if you' for a week and DM me what happens.",
+        "notes": "Film this like a voice note to a friend. Walk and talk. The casual delivery matches the 'stop being so salesy' message perfectly."
+      },
+      "framed": {
+        "hook": "There's a reason your CTAs feel cringey. You're giving a Call To Action when you should be giving a Why To Action.",
+        "body": "Teach the framework: WTA over CTA. Explain the 'If You' structure. Use the bar analogy: nobody walks into a bar and says 'Be my friend now.' You find common ground first. Then give the rule: limit hard sells to 1 in 10 videos. The other 9 should feel like invitations.",
+        "cta": "Comment with your best 'If You' line. I'll tell you if it lands.",
+        "notes": "Have the 'WTA > CTA' formula on screen behind you. This is a teaching moment so slow down and let the bar analogy breathe. It's the part people will remember."
+      },
+      "visual-storyteller": {
+        "hook": "A creator I coached was posting daily and hemorrhaging followers. The problem wasn't the content. It was the last 5 seconds of every video.",
+        "body": "Tell the story: creator posting great content, but ending every video with aggressive CTAs. Followers felt sold to. Swapped to 'If You' endings. Follow rate jumped. Walk through the before/after of their CTA language and the metric shift that followed.",
+        "cta": "Save this if you want to stop repelling the audience you're trying to attract.",
+        "notes": "SAO structure: Situation (creator losing followers despite good content), Action (swapped CTAs for WTAs), Outcome (follow rate increased). Show the before/after CTA language on screen as text overlays."
+      },
+      "talking-head": {
+        "hook": "Your CTA is killing your content. Here's what to say instead.",
+        "body": "Direct and fast. Explain that 'Follow for more' is a command and people resist commands. 'If you're a business owner who wants more leads from content, I post about this every single week' is an invitation. Bar analogy: you'd never walk up to a stranger and say 'Be my friend.' You'd find something in common first. Hard sells? One in ten. Max.",
+        "cta": "If you're tired of your content feeling salesy, I talk about this stuff all the time.",
+        "notes": "The CTA of this video should itself be a WTA. Practice what you preach in real time. That's the power move."
+      }
+    }
+  },
+  {
+    "id": "ga2-04",
+    "title": "DM Every New Follower From The Last 7 Days",
+    "category": "sales",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "group-apr14",
+    "type": "tactic",
+    "description": "Today's assignment: DM every new follower across all platforms from the last 7 days. Pretend you have a bricks and mortar store and someone just walked in. What would you say to them? Say that in the DM. Start a conversation. Get curious. This is the nurturing that content gurus never tell you about. Posting is not enough. Every reply to a comment is content. Every DM to a follower is content. Every conversation builds the question bank for your next batch of videos.",
+    "context": "Given as a live homework assignment during the organic morning session. Sev emphasized this is the work beyond posting that separates results from vanity metrics.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "dm-outreach",
+      "nurturing",
+      "lead-nurturing",
+      "organic",
+      "homework"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Screen record your follower list. See those new followers from the last 7 days? You should be DMing every single one.",
+        "body": "Show the process: open followers list, filter to recent, draft a genuine DM. Narrate the mindset shift: these people just walked into your store. You wouldn't ignore someone who walked through your front door. Show example DMs that are curious, not salesy.",
+        "cta": "Save this, then go DM your last 5 new followers right now. Not tomorrow. Now.",
+        "notes": "Blur out real usernames for privacy. Show 2-3 example DM templates on screen. The screen recording makes this feel tactical and immediately actionable."
+      },
+      "meme": {
+        "hook": "New follower: *follows you* You: *does absolutely nothing* Also you: 'Why am I not getting clients from social media?'",
+        "body": "Three-panel text meme with a confused/frustrated reaction clip at the end. The joke writes itself: you're ignoring people who literally raised their hand.",
+        "cta": "Tag someone who has 500 new followers and has DMed zero of them.",
+        "notes": "Keep it under 8 seconds. The humor is in how obvious the solution is. Use a reaction clip that conveys 'what did you expect?'"
+      },
+      "candid": {
+        "hook": "I just spent 20 minutes DMing every new follower from the past week and I want to tell you what happened.",
+        "body": "Share real reactions you got. Some people ignored it, some said thanks, and a few turned into actual conversations. The point: if someone walks into your store, you greet them. Social media is the same. Stop posting and ghosting. Nurturing is the work most people skip.",
+        "cta": "If you've never DMed a new follower before, try it today and DM me what happens. I'm genuinely curious.",
+        "notes": "Film right after actually doing the DMs so the energy is real. Share specific (anonymized) responses if possible. Authenticity is everything here."
+      },
+      "framed": {
+        "hook": "You're spending hours creating content but zero minutes talking to the people who actually showed up. That's backwards.",
+        "body": "Structured lesson: every new follower is someone who walked into your store. Your job is to start a conversation, not pitch. Get curious. Ask what they do, what brought them to your page. The nurturing that happens in DMs is where content turns into revenue.",
+        "cta": "Comment 'DM' if you're going to try this today. I'll check back and ask how it went.",
+        "notes": "This is a mindset-shift piece. The 'walked into your store' metaphor should be the anchor. Keep returning to it throughout."
+      },
+      "visual-storyteller": {
+        "hook": "A client told me they were posting 5 times a week and getting zero inquiries. I asked one question: 'How many new followers did you DM this month?' The answer was zero.",
+        "body": "Tell the transformation: client posting consistently, getting followers, but no revenue. Introduced the 7-day DM rule. Within two weeks, three conversations turned into two booked calls. The content got them in the door. The DMs closed the gap.",
+        "cta": "Save this if you know you've been skipping the most important step in your funnel.",
+        "notes": "SAO: Situation (client posting but no revenue), Action (started DMing every new follower within 7 days), Outcome (conversations that led to booked calls). Use text overlays for the timeline and results."
+      },
+      "talking-head": {
+        "hook": "Every new follower is a person who just walked into your store. And you're standing behind the counter scrolling on your phone. Stop it.",
+        "body": "Direct, almost confrontational energy. You post content to attract people. They show up. They follow you. And then you do nothing? DM them. Not a pitch. A conversation. 'Hey, thanks for following. What do you do?' That's it. Get curious. The sale comes later.",
+        "cta": "If you've got new followers from the last 7 days you haven't talked to, go handle that right now. I'll wait.",
+        "notes": "The confrontational hook needs to land with care, not mean. Lean into the store metaphor hard. The energy should feel like a coach calling you out because they believe in you."
+      }
+    }
+  },
+  {
+    "id": "ga2-05",
+    "title": "The Mitch Brown Swim School (Learning Library In Action)",
+    "category": "sales",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "group-apr14",
+    "type": "case-study",
+    "description": "Mitch Brown owns a swim school in Albury/Wodonga. Old approach: text-wall blog post titled '7 Reasons Kids Aren't Progressing.' Nobody reads past paragraph 2. New approach: a clean landing page with a video placeholder (to be recorded and embedded from YouTube), a 60-second self-assessment quiz, comparison tools, nice graphs, and a 'Book Free Assessment' button above the fold. Built the entire page in 2 minutes with Claude. Results started coming in within 2 days. One question = one page = one YouTube video = one set of short-form clips. That's omnipresence from a single topic.",
+    "context": "Live demo during the organic morning session. Sev showed before/after of Mitch's website, then demonstrated how Claude can build these pages in minutes. Attendees could see the transformation in real time.",
+    "businessTypes": [
+      "Swim School",
+      "Education",
+      "All"
+    ],
+    "tags": [
+      "case-study",
+      "learning-library",
+      "website",
+      "claude",
+      "omnipresence",
+      "geo-thesis"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Screen record a before and after. This is what a swim school's website looked like before AI. And this is what we built in 2 minutes with Claude.",
+        "body": "Show the actual transformation: text-wall blog on the left, clean landing page with video, quiz, and graphs on the right. Walk through each element and explain why it works. One question equals one page equals omnipresence.",
+        "cta": "Save this if you want to see what a modern landing page looks like for a service business.",
+        "notes": "The before/after split screen is the hero moment. Linger on the 'built in 2 minutes' part because that's what makes jaws drop. Show the Claude interface briefly if possible."
+      },
+      "meme": {
+        "hook": "Service business websites in 2024 vs. what you can build in 2 minutes with AI.",
+        "body": "Left side: wall of text, stock photos, generic 'Contact Us' button. Right side: clean landing page with video, quiz, graphs. Use a 'glow-up' or upgrade meme format.",
+        "cta": "Send this to a business owner whose website is still a wall of text.",
+        "notes": "The contrast needs to be dramatic. Use a trending glow-up sound. The 2-minute claim is the scroll-stopper, make sure it's prominent in the text overlay."
+      },
+      "candid": {
+        "hook": "Just built a landing page for a swim school in literally two minutes and I need to show you this.",
+        "body": "Phone-filmed, excited energy. Show the before: a blog post nobody reads. Show the after: a page with a video answering one question, a self-assessment quiz, and clean graphs. Explain the 'one question, one page' concept and how it creates omnipresence. This took 2 minutes with Claude. Results showed up in 2 days.",
+        "cta": "If you're a service business still relying on blog posts nobody reads, DM me 'page' and I'll show you how to do this.",
+        "notes": "The excitement needs to be genuine. Film this like you just discovered something and can't wait to share it. Show your screen briefly with the finished page."
+      },
+      "framed": {
+        "hook": "I'm going to show you a case study that changed how I think about service business websites. This is Mitch Brown's swim school.",
+        "body": "Structured walkthrough: the problem (text-heavy blog nobody engaged with), the solution (clean landing page with video, quiz, and data visualization), the tool (Claude, built in 2 minutes), the result (impact within 2 days). Teach the principle: one question equals one page. Answer the questions your customers actually ask, then be everywhere with those answers.",
+        "cta": "Follow for more case studies like this. Comment 'SWIM' if you want me to break down the exact page structure.",
+        "notes": "Show the before/after on a screen behind you or as a screen share. This is a teaching-through-story format, so the case study carries the lesson."
+      },
+      "visual-storyteller": {
+        "hook": "A swim school owner was writing blog posts nobody read. Two minutes and one AI tool later, everything changed.",
+        "body": "Full narrative arc: Mitch Brown runs a swim school. His website was a wall of text. We took his most-asked question, built a landing page with a video answer, a self-assessment quiz, and clean data visuals. Built it in 2 minutes with Claude. Within 2 days, the results started showing. The principle: one question, one page, everywhere.",
+        "cta": "Save this case study. This is the new standard for service business pages.",
+        "notes": "This is your documentary piece. SAO: Situation (text-heavy site, no engagement), Action (built a modern landing page with AI in 2 minutes), Outcome (results in 2 days). Use before/after visuals as the transformation sequence. Music should shift from flat to uplifting at the transformation moment."
+      },
+      "talking-head": {
+        "hook": "I built a landing page in 2 minutes that outperformed months of blog content. Let me tell you about a swim school named Mitch Brown.",
+        "body": "High energy, direct to camera. Tell the story fast: swim school, text-wall blog, nobody reading it. Took the top question customers ask, built a page with video, quiz, and graphs using Claude. Two minutes. Results in two days. The lesson: stop writing essays nobody reads. Build pages that answer one question and do it better than anyone else.",
+        "cta": "If you're still blogging like it's 2015, comment 'UPGRADE' and I'll show you the new playbook.",
+        "notes": "Speed and conviction carry this. The '2 minutes' and '2 days' numbers need to hit hard. Use hand gestures to emphasize the contrast between old and new approaches."
+      }
+    }
+  },
+  {
+    "id": "ga2-06",
+    "title": "Assignment Selling With Self-Assessment Quizzes",
+    "category": "ai",
+    "funnel": [
+      "BOF"
+    ],
+    "sourceId": "group-apr14",
+    "type": "tactic",
+    "description": "Put a self-assessment quiz on your landing page. No email required. The customer checks statements that sound like their situation, gets a score ('3 out of 7 red flags'), and sees a recommendation to book. The page sells itself because the customer just diagnosed their own problem. They're not being sold to, they're being shown what they already suspected. You can do this in the DMs too. Give them an assignment. Interactive beats passive every time.",
+    "context": "Demonstrated live using Mitch Brown's swim school quiz: 'Your child's swim progress stalling? Check every statement that sounds like your child.' Built with Claude. Extends the Interactive Quizzes entry (ga1-28) with the assignment selling application.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "assignment-selling",
+      "quiz",
+      "claude",
+      "landing-page",
+      "self-assessment",
+      "conversion"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Screen record a self-assessment quiz on a landing page. Watch how the customer diagnoses their own problem, gets a score, and books. No email gate. No friction.",
+        "body": "Walk through the quiz experience from the customer's perspective. They land on the page, take the quiz, see their score, understand their problem, and book a call. The page sells itself because the quiz does the convincing. No email wall. No 'download our free guide' nonsense.",
+        "cta": "Save this. If you sell any kind of service, a quiz like this will outsell your sales page every time.",
+        "notes": "Screen record a real or mock quiz experience. The key is showing the flow from the customer's POV. Keep it smooth and fast, no fumbling."
+      },
+      "meme": {
+        "hook": "Sales pages: 'Book a call to see if we're a fit!' Self-assessment quizzes: 'Find out your score and decide for yourself.'",
+        "body": "Two-panel comparison. First panel: pushy sales page with desperate energy. Second panel: calm, confident quiz that lets the customer sell themselves. Reaction clip of someone nodding approvingly.",
+        "cta": "Share this with someone who still has a 'Book a Free Consultation' button and nothing else on their site.",
+        "notes": "The contrast between pushy and calm is the joke. Keep it under 10 seconds. The reaction clip should feel like 'finally, someone gets it.'"
+      },
+      "candid": {
+        "hook": "Hot take: your landing page shouldn't sell. It should let people sell themselves. Here's how.",
+        "body": "Walk and talk about assignment selling. Put a self-assessment quiz on your landing page. No email required, that kills trust. Let the customer answer questions, get a score, understand their own problem, and then choose to book. They show up pre-sold because they diagnosed themselves.",
+        "cta": "If you want to see an example of a quiz that does this, DM me 'quiz' and I'll send you one.",
+        "notes": "Keep this casual and opinionated. The 'no email required' part is counterintuitive and worth emphasizing. Film somewhere that feels real and unplanned."
+      },
+      "framed": {
+        "hook": "What if your landing page could close deals while you sleep? Not with a chatbot. With a self-assessment quiz.",
+        "body": "Teach the concept: assignment selling through quizzes. The customer lands on your page, takes a quiz, scores themselves, understands the gap between where they are and where they want to be, and books. No email gate. No friction. The page does the selling because the customer convinces themselves. They show up to the call already knowing they need help.",
+        "cta": "Comment 'QUIZ' if you want me to show you how to build one of these in under 5 minutes with AI.",
+        "notes": "This is a concept piece, so spend time on the psychology of why self-diagnosis works better than being told you have a problem. Screen share or whiteboard the quiz flow."
+      },
+      "visual-storyteller": {
+        "hook": "A service business added one quiz to their landing page. No email gate. No hard sell. Bookings went up and no-shows went down. Here's exactly what they did.",
+        "body": "Walk through the transformation: before (generic landing page with a contact form), after (landing page with a self-assessment quiz). Show the customer journey: take quiz, get score, realize the gap, book a call. Explain why this works: the customer diagnoses their own problem. Nobody had to convince them. They convinced themselves.",
+        "cta": "Save this if you want your landing page to do your selling for you.",
+        "notes": "SAO: Situation (low conversions on generic landing page), Action (added a self-assessment quiz with no email gate), Outcome (more bookings, fewer no-shows). Show the quiz flow as a visual sequence."
+      },
+      "talking-head": {
+        "hook": "Stop asking for emails. Stop asking people to 'book a free call.' Put a quiz on your page and let them sell themselves.",
+        "body": "Direct to camera, strong opinion. Assignment selling with quizzes is the move. Customer takes the quiz, gets a score, sees exactly where they stand, and decides on their own that they need help. No email wall because that's a trust killer. No hard sell because the quiz IS the sell. They book because they want to, not because you pressured them.",
+        "cta": "If you've been struggling to convert website visitors into calls, try this. Comment 'QUIZ' and I'll break down the setup.",
+        "notes": "The conviction here needs to be strong. You're telling people to throw out their current approach. Own that energy. Lean into why email gates kill trust."
+      }
+    }
+  },
+  {
+    "id": "ga2-07",
+    "title": "Find The Hive, Not The Individual Bees",
+    "category": "strategy",
+    "funnel": [
+      "ALL"
+    ],
+    "sourceId": "group-apr14",
+    "type": "framework",
+    "description": "Stop chasing individual customers. Find where they all congregate and go there. Physically: wedding expos, industry events, community meetups. Digitally: Facebook groups, Reddit threads, community forums. At a wedding expo, Sev offered to photograph the event for free in exchange for sending each attendee their photo. Collected a massive email list of brides-to-be who experienced his personality firsthand. One bride forfeited her existing photographer's deposit 3 months later to hire him. In Facebook groups, answer questions with a video instead of a text comment. Everyone else drops shitty one-line comments. You drop a full answer on camera. You win.",
+    "context": "Taught during the organic morning session with both the wedding expo case study and the Facebook group video-reply case study. Sev booked out from both strategies.",
+    "businessTypes": [
+      "All"
+    ],
+    "tags": [
+      "audience-fishing",
+      "community",
+      "events",
+      "facebook-groups",
+      "organic",
+      "they-ask-you-answer"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Text on screen: 'Stop chasing individual customers. Find where they already gather.' Then show a map of hives: expos, Facebook groups, local meetups.",
+        "body": "Animated or slide-based walkthrough of the concept. Show the wedding photographer example: goes to a wedding expo, offers free photos, collects an email list, gets booked out. Show the Facebook group example: finds where customers ask questions, answers with video instead of text. The hive is the shortcut.",
+        "cta": "Save this and make a list of 3 hives where your ideal customers already hang out.",
+        "notes": "Use a visual metaphor of bees and hives if you can make it clean. The two examples (expo and Facebook group) should feel like mini case studies within the larger concept."
+      },
+      "meme": {
+        "hook": "Chasing individual customers one by one vs. showing up where 500 of them are already gathered.",
+        "body": "Split comparison: left side shows someone exhausted chasing people, right side shows someone casually standing in front of a crowd. Use a 'why not both' or 'there's a better way' meme format.",
+        "cta": "Send this to someone who's been cold DMing strangers instead of finding the hive.",
+        "notes": "Keep it under 8 seconds. The visual contrast between exhaustion and ease is the entire joke. Pick a trending format that shows a dramatic upgrade."
+      },
+      "candid": {
+        "hook": "Quick story. A wedding photographer went to one expo, gave away free photos, and booked out their entire calendar. Stop chasing bees. Find the hive.",
+        "body": "Tell the story casually: the photographer found where couples already gathered (wedding expo), offered value (free photos), collected emails, and converted. Then pivot to the digital version: Facebook groups where your customers ask questions. Answer with a video, not a paragraph. You become the expert overnight.",
+        "cta": "If you know a hive where your customers gather but you haven't shown up there yet, comment what it is. I'll tell you how to approach it.",
+        "notes": "This works best as a walk-and-talk. The wedding expo story hooks people in, then the Facebook group tactic gives them something they can do today. Two examples, one video."
+      },
+      "framed": {
+        "hook": "You don't need more followers. You need to find the hive. Let me explain.",
+        "body": "Teach the framework: stop marketing to individuals, start marketing to congregations. The wedding expo example: free photos in exchange for emails, booked out calendar. The Facebook group example: answer questions with video, not text. One video answer in a group of 5,000 people does more than 50 cold DMs. Find where your customers already are and show up with value.",
+        "cta": "Follow if you want strategies that don't require a massive audience. Comment your industry and I'll suggest a hive.",
+        "notes": "The two examples are your proof points. Spend roughly equal time on each. Have the 'find the hive' concept on a slide or whiteboard behind you."
+      },
+      "visual-storyteller": {
+        "hook": "A wedding photographer was struggling to find clients one by one. Then they found the hive. Here's what happened.",
+        "body": "Narrative arc: photographer grinding, posting content, DMing strangers, getting nowhere. Then they go to a wedding expo. Free photos. Email list. Booked solid. Second story: a service provider finds a Facebook group where their customers ask questions every day. Instead of typing a reply, they record a video answer. Within weeks, they're the go-to expert. The lesson: stop chasing individual bees.",
+        "cta": "Save this and ask yourself: where is my hive? That one question could change your entire business.",
+        "notes": "SAO for each mini-story. Story one: expo to bookings. Story two: group to expert status. The visual metaphor of a scattered approach vs. a focused approach should be woven throughout."
+      },
+      "talking-head": {
+        "hook": "You're out here chasing individual bees when there's a whole hive right there. Let me tell you where to look.",
+        "body": "High energy, direct. Two examples, rapid fire. Wedding photographer: expo, free photos, email list, booked out. Service business: Facebook group, answer questions with video not text, become the expert in the room. The principle: go where they already are. Stop trying to pull them to you one by one.",
+        "cta": "If you know exactly where your customers hang out but haven't shown up there yet, this is your sign. Comment where your hive is.",
+        "notes": "The bee/hive metaphor is sticky so keep returning to it. The energy should build across both examples. Use your hands to illustrate 'scattered' vs. 'focused' approaches."
+      }
+    }
+  },
+  {
+    "id": "ga2-08",
+    "title": "No CTA In Moderated Communities",
+    "category": "sales",
+    "funnel": [
+      "MOF"
+    ],
+    "sourceId": "group-apr14",
+    "type": "tactic",
+    "description": "If you're posting in heavily moderated Facebook groups, Reddit threads, or niche health communities, remove all calls to action. Zero. No mentions of your programs, no links, no 'DM me.' Just pure value as a video. Don't even have the mindset of 'I'm doing this to get a customer.' Do it because you genuinely want to help. People aren't stupid. If your answer is good, they'll click your profile, find your stuff, and DM you on their own. The moment you pitch, you get banned and you've burned the trust of the entire community.",
+    "context": "Natania McLeod runs gentle Pilates for people with chronic fatigue syndrome. She kept getting banned from CFS and long COVID groups for posting anything that looked like promotion. Sev told her to strip out every CTA and just give value, because nobody else is making videos in those groups.",
+    "businessTypes": [
+      "Health & Wellness",
+      "All"
+    ],
+    "tags": [
+      "moderated-groups",
+      "organic",
+      "no-cta",
+      "community",
+      "trust-building",
+      "value-first"
+    ],
+    "formats": {
+      "faceless": {
+        "hook": "Text on screen: 'How to get clients from Facebook groups without getting banned.' Then show the rule: Zero CTAs. Pure value only.",
+        "body": "Walk through the approach: in moderated communities, you never pitch. Never link. Never say 'DM me.' You answer questions with short, helpful videos. You give real value with zero strings attached. People will look you up on their own. The moment you pitch, you get banned and lose access to the hive forever.",
+        "cta": "Save this before you post in a group and get yourself banned. Seriously.",
+        "notes": "Show examples of what NOT to do (salesy comments, link drops) alongside what TO do (pure value answers). The contrast teaches the lesson faster than explaining it."
+      },
+      "meme": {
+        "hook": "Facebook group admins watching you drop a CTA in their community.",
+        "body": "Use a 'ban hammer' or 'kicked out' reaction meme. Cut to text: 'The fix: zero CTAs. Pure value. They'll find you.' Approving nod reaction.",
+        "cta": "Tag someone who needs to see this before they get banned from another group.",
+        "notes": "The ban hammer visual is universally understood. Keep it under 10 seconds. The contrast between getting banned and getting found organically is the punchline."
+      },
+      "candid": {
+        "hook": "I watched someone get banned from a Facebook group with 10,000 of their ideal customers in it. Over one link. Don't be that person.",
+        "body": "Casual, cautionary tale energy. In strict communities, your only move is pure value. No CTAs. No 'link in bio.' No 'DM me for more.' Just answer questions better than anyone else. Record a quick video response instead of typing a paragraph. People will find your profile. They'll look you up. The curiosity does the selling for you.",
+        "cta": "If you're in groups where your ideal customers hang out, comment 'VALUE' and I'll tell you exactly how to show up without getting kicked out.",
+        "notes": "The cautionary tale opening works because everyone knows someone who's done this. Keep the tone 'been there, seen that' rather than preachy."
+      },
+      "framed": {
+        "hook": "There's a way to get clients from Facebook groups without ever posting a single CTA. Here's the playbook.",
+        "body": "Structured breakdown: Step one, find moderated groups where your customers ask questions. Step two, answer those questions with short video responses, not text. Step three, never include a CTA. No links, no 'DM me,' no pitches. Step four, trust the process. People will find your profile, check your content, and reach out on their own. The moment you pitch, you get banned and you lose access to the hive.",
+        "cta": "Follow for more strategies that work in spaces where selling isn't allowed. Comment if you've ever been banned from a group for pitching.",
+        "notes": "The step-by-step structure makes this actionable. Emphasize step three hard because that's where most people fail. The 'trust the process' part is the hardest sell but the most important."
+      },
+      "visual-storyteller": {
+        "hook": "A service provider found a Facebook group full of their ideal customers. 10,000 members. Perfect niche. They posted one helpful comment with a link to their site. Banned. Permanently. Here's what they should have done instead.",
+        "body": "Tell the cautionary tale first: the ban, the lost opportunity, the lesson. Then show the right approach: another provider in the same group who answers questions with pure value videos. No links. No CTAs. No pitch. Within a month, people are DMing them, following their page, and booking calls. The group never banned them because they never broke a rule.",
+        "cta": "Save this playbook. The difference between getting banned and getting booked is one decision: value over pitch.",
+        "notes": "SAO with a twist: tell the failure story first, then the success story. The contrast between the two outcomes makes the lesson unforgettable. Use text overlays for the 'rules' of engagement."
+      },
+      "talking-head": {
+        "hook": "Zero CTAs. Zero links. Zero pitches. And you'll get more clients than the person spamming every group they're in. Here's why.",
+        "body": "Direct to camera, calm conviction. In moderated communities, your only play is value. Answer questions with video. Be the most helpful person in the room. Never mention your business. Never link to your site. Never say 'DM me.' People are curious by nature. If you keep showing up with answers, they will find you. They will check your profile. They will reach out. The moment you pitch? Banned. Game over.",
+        "cta": "If you're in groups right now where your customers are, go answer one question today. No CTA. Just value. Watch what happens.",
+        "notes": "The calm, confident energy here is key. You're not yelling this, you're teaching it with quiet certainty. The paradox of 'do less selling, get more sales' is the hook that keeps people watching."
+      }
+    }
   }
 ]
